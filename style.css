@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Graffiti";
+  src: url("./refs/fonts/Comic Sans MS/") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Myth";
+  src: url("./refs/fonts/CHILLER-FONT/Chiller.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+.main_wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.torii {
+  width: 1050px;
+  height: 764px;
+  background-image: url("./refs/torii mist_3.png");
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.dragon {
+  width: 500px;
+  height: 675px;
+  background-image: url("./refs/japanese dragon light.png");
+  margin: 0 auto;
+  margin-top: 50px;
+  /* position: absolute; */
+  z-index: 10;
+  opacity: 0.4;
+  transform: translate(20px, -730px);
+}
+
+.sakura_wrapper {
+  width: 500px;
+  height: 469px;
+  position: absolute;
+  transform: translate(0px, -1790px);
+}
+
+.sakura_branch {
+  width: 500px;
+  height: 469px;
+  background-image: url("./refs/sakura_branch_resize.png");
+  z-index: 20;
+  position: relative;
+  -webkit-animation-name: sakura_anim;
+          animation-name: sakura_anim;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transform-origin: top right;
+}
+
+@-webkit-keyframes sakura_anim {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(-6deg);
+  }
+  75% {
+    transform: rotateZ(4deg);
+  }
+  100% {
+    transform: rotateZ(-5deg);
+  }
+}
+
+@keyframes sakura_anim {
+  0% {
+    transform: rotateZ(-5deg);
+  }
+  25% {
+    transform: rotateZ(5deg);
+  }
+  50% {
+    transform: rotateZ(-6deg);
+  }
+  75% {
+    transform: rotateZ(4deg);
+  }
+  100% {
+    transform: rotateZ(-5deg);
+  }
+}
+.lady_bug {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  z-index: 30;
+  background-image: url("./refs/ladybug_50.png");
+  position: relative;
+  transform: translate(180px, 310px);
+}
+
+.up_buttons_flex {
+  width: 450px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px 0px 0px 300px;
+  z-index: 40;
+  position: relative;
+}
+
+.new_button, .pause_button, .results_button, .drag_drop_menu {
+  width: 90px;
+  height: 30px;
+  background-color: transparent;
+  border: 5px solid #d81a46;
+  border-radius: 4px;
+}/*# sourceMappingURL=style.css.map */
