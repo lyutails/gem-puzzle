@@ -112,7 +112,7 @@ dragon.classList.add('dragon');
 mainWrapper.appendChild(dragon);
 
 let upButtonsFlex = document.createElement('div');
-upButtonsFlex.classList.add('up_button_flex');
+upButtonsFlex.classList.add('up_buttons_flex');
 mainWrapper.appendChild(upButtonsFlex);
 
 let buttonNew = document.createElement('div');
@@ -147,11 +147,49 @@ let gameField = document.createElement('div');
 gameField.classList.add('game_field');
 mainWrapper.appendChild(gameField);
 
+let gameLine = document.createElement('div');
+gameLine.classList.add('game_line');
+gameField.appendChild(gameLine);
 
+let gameCell = document.createElement('div');
+gameCell.classList.add('game_cell');
+gameField.appendChild(gameCell);
 
-let buttonLight = document.createElement('button_light');
-let buttonDark = document.createElement('button_dark');
-let buttonSound = document.createElement('button_sound');
+Array(3).fill('game_line');
+
+let bottomButtonsContainer = document.createElement('div');
+bottomButtonsContainer.classList.add('bottom_buttons_container');
+mainWrapper.appendChild(bottomButtonsContainer);
+
+let rsschoolButton = document.createElement('div');
+rsschoolButton.classList.add('rsschool_button');
+bottomButtonsContainer.appendChild(rsschoolButton);
+rsschoolButton.setAttribute('content', 'test content');
+rsschoolButton.setAttribute('class', 'rsschool_content');
+rsschoolButton.innerHTML = 'RS School';
+
+let symbolButtonsContainer = document.createElement('div');
+symbolButtonsContainer.classList.add('symbol_buttons');
+bottomButtonsContainer.appendChild(symbolButtonsContainer);
+
+let buttonLight = document.createElement('div');
+buttonLight.classList.add('button_light');
+symbolButtonsContainer.appendChild(buttonLight);
+
+let buttonDark = document.createElement('div');
+buttonDark.classList.add('button_dark');
+symbolButtonsContainer.appendChild(buttonDark);
+
+let buttonSound = document.createElement('div');
+buttonSound.classList.add('button_sound');
+symbolButtonsContainer.appendChild(buttonSound);
+
+let lyutailsButton = document.createElement('div');
+lyutailsButton.classList.add('lyutails_button');
+bottomButtonsContainer.appendChild(lyutailsButton);
+lyutailsButton.setAttribute('content', 'test content');
+lyutailsButton.setAttribute('class', 'lyutails_content');
+lyutailsButton.innerHTML = '@lyutails';
 
 
 buttonLight.classList.add('light_button');

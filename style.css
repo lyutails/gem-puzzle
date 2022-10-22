@@ -17,6 +17,7 @@
 }
 .main_wrapper {
   width: 1000px;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -44,7 +45,7 @@
   width: 500px;
   height: 469px;
   position: absolute;
-  transform: translate(0px, -1790px);
+  transform: translate(0px, -1660px);
 }
 
 .sakura_branch {
@@ -55,8 +56,8 @@
   position: relative;
   -webkit-animation-name: sakura_anim;
           animation-name: sakura_anim;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -66,37 +67,37 @@
 
 @-webkit-keyframes sakura_anim {
   0% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(-4deg);
   }
   25% {
-    transform: rotateZ(5deg);
+    transform: rotateZ(4deg);
   }
   50% {
-    transform: rotateZ(-6deg);
+    transform: rotateZ(-4deg);
   }
   75% {
     transform: rotateZ(4deg);
   }
   100% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(-4deg);
   }
 }
 
 @keyframes sakura_anim {
   0% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(-4deg);
   }
   25% {
-    transform: rotateZ(5deg);
+    transform: rotateZ(4deg);
   }
   50% {
-    transform: rotateZ(-6deg);
+    transform: rotateZ(-4deg);
   }
   75% {
     transform: rotateZ(4deg);
   }
   100% {
-    transform: rotateZ(-5deg);
+    transform: rotateZ(-4deg);
   }
 }
 .lady_bug {
@@ -115,9 +116,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 100px 0px 0px 300px;
   z-index: 40;
   position: relative;
+  top: 0;
+  transform: translate(480px, -1420px);
 }
 
 .new_button, .pause_button, .results_button, .drag_drop_menu {
@@ -126,4 +128,171 @@
   background-color: transparent;
   border: 5px solid #d81a46;
   border-radius: 4px;
+}
+
+.game_field {
+  width: 410px;
+  height: 410px;
+  border: 5px solid #d81a46;
+  position: relative;
+  transform: translate(315px, -1280px);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.game_field .game_line {
+  width: 410px;
+  height: 2px;
+  background-color: #d81a46;
+  margin-top: 100px;
+  position: relative;
+}
+.game_field .game_cell {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: #d81a46;
+  opacity: 0.4;
+  z-index: 100;
+  transition: all 0.4s ease-in-out;
+}
+.game_field .game_cell:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+}
+
+.bottom_buttons_container {
+  width: 500px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  transform: translate(80px, -1140px);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rsschool_button {
+  width: 150px;
+  height: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.rsschool_content {
+  color: #d81a46;
+  font-family: "Myth";
+  font-size: 36px;
+  transition: all 0.4s ease-in-out;
+}
+
+.rsschool_content:hover {
+  color: #fd6488;
+  cursor: pointer;
+}
+
+.rsschool_content:active {
+  color: #31040f;
+  cursor: pointer;
+}
+
+.symbol_buttons {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.button_light {
+  width: 40px;
+  height: 40px;
+  background-image: url("./refs/icons/sun.png");
+  transition: all 0.4s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button_light:hover {
+  background-image: url("./refs/icons/sun_hover.png");
+  cursor: pointer;
+}
+
+.button_light:active {
+  background-image: url("./refs/icons/sun_active.png");
+  cursor: pointer;
+}
+
+.button_dark {
+  width: 40px;
+  height: 40px;
+  background-image: url("./refs/icons/moon.png");
+  transition: all 0.4s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button_dark:hover {
+  background-image: url("./refs/icons/moon_hover.png");
+  cursor: pointer;
+}
+
+.button_dark:active {
+  background-image: url("./refs/icons/moon_active.png");
+  cursor: pointer;
+}
+
+.button_sound {
+  width: 40px;
+  height: 40px;
+  background-image: url("./refs/icons/megafon_1.png");
+  transition: all 0.4s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button_sound:hover {
+  background-image: url("./refs/icons/megafon_1_hover.png");
+  cursor: pointer;
+}
+
+.button_sound:active {
+  background-image: url("./refs/icons/megafon_1_active.png");
+  cursor: pointer;
+}
+
+.lyutails_button {
+  width: 150px;
+  height: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.lyutails_content {
+  color: #d81a46;
+  font-family: "Myth";
+  font-size: 36px;
+  transition: all 0.4s ease-in-out;
+}
+
+.lyutails_content:hover {
+  color: #fd6488;
+  cursor: pointer;
+}
+
+.lyutails_content:active {
+  color: #31040f;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

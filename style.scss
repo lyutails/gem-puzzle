@@ -17,11 +17,14 @@
     font-style: normal;
 }
   
-$red: #d81a46;
+$main: #d81a46;
+$hover: #fd6488;
+$active: #31040f;
 
 
 .main_wrapper {
     width: 1000px;
+    height: 100vh;
     margin: 0 auto;
 }
 
@@ -49,7 +52,7 @@ $red: #d81a46;
     width: 500px;
     height: 469px;
     position: absolute;
-    transform: translate(0px, -1790px);
+    transform: translate(0px, -1660px);
 }
 
 .sakura_branch {
@@ -59,7 +62,7 @@ $red: #d81a46;
     z-index: 20;
     position: relative;    
     animation-name: sakura_anim;
-    animation-duration: 15s;
+    animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;    
     transform-origin: top right;
@@ -67,23 +70,21 @@ $red: #d81a46;
 
 @keyframes sakura_anim {
     0% {
-        transform: rotateZ(-5deg);
+        transform: rotateZ(-4deg);
     }
     25% {
-        transform: rotateZ(5deg);
+        transform: rotateZ(4deg);
     }
     50% {
-        transform: rotateZ(-6deg);
+        transform: rotateZ(-4deg);
     }
     75% {
         transform: rotateZ(4deg);
     }
     100% {
-        transform: rotateZ(-5deg);
+        transform: rotateZ(-4deg);
     }
 }
-
-
 
 .lady_bug {
     width: 50px;
@@ -100,16 +101,169 @@ $red: #d81a46;
     height: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 100px 0px 0px 300px;
+    justify-content: space-between;    
     z-index: 40;
-    position: relative;
+    position: relative;   
+    top: 0; 
+    transform: translate(480px, -1420px);
 }
 
 .new_button, .pause_button, .results_button, .drag_drop_menu {
     width: 90px;
     height: 30px;
     background-color: transparent;
-    border: 5px solid $red;
+    border: 5px solid $main;
     border-radius: 4px;
+}
+
+.game_field {
+    width: 410px;
+    height: 410px;
+    border: 5px solid $main;
+    position: relative;
+    transform: translate(315px, -1280px);
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+
+    & .game_line {
+        width: 410px;
+        height: 2px;
+        background-color: $main;
+        margin-top: 100px;
+        position: relative;
+    }
+
+    & .game_cell {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: $main;
+        opacity: 0.4;
+        z-index: 100;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+        }
+    }
+}
+
+.bottom_buttons_container {
+    width: 500px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(80px, -1140px);
+    user-select: none; 
+}
+
+.rsschool_button {
+    width: 150px;
+    height: 40px;
+    user-select: none;
+}
+
+.rsschool_content {
+    color: $main;
+    font-family: 'Myth';
+    font-size: 36px;
+    transition: all 0.4s ease-in-out;
+}
+
+.rsschool_content:hover {
+    color: $hover;    
+    cursor: pointer;
+}
+
+.rsschool_content:active {
+    color: $active;    
+    cursor: pointer;
+}
+
+.symbol_buttons {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;    
+}
+
+.button_light {
+    width: 40px;
+    height: 40px;
+    background-image: url('./refs/icons/sun.png');
+    transition: all 0.4s ease-in-out;    
+    user-select: none;
+}
+
+.button_light:hover {
+    background-image: url('./refs/icons/sun_hover.png');
+    cursor: pointer;
+}
+
+.button_light:active {
+    background-image: url('./refs/icons/sun_active.png');
+    cursor: pointer;
+}
+
+.button_dark {
+    width: 40px;
+    height: 40px;
+    background-image: url('./refs/icons/moon.png');
+    transition: all 0.4s ease-in-out;
+    user-select: none;    
+}
+
+.button_dark:hover {
+    background-image: url('./refs/icons/moon_hover.png');
+    cursor: pointer;
+}
+
+.button_dark:active {
+    background-image: url('./refs/icons/moon_active.png');
+    cursor: pointer;
+}
+
+.button_sound {
+    width: 40px;
+    height: 40px;
+    background-image: url('./refs/icons/megafon_1.png');
+    transition: all 0.4s ease-in-out;
+    user-select: none;  
+}
+
+.button_sound:hover {
+    background-image: url('./refs/icons/megafon_1_hover.png');
+    cursor: pointer;
+}
+
+.button_sound:active {
+    background-image: url('./refs/icons/megafon_1_active.png');
+    cursor: pointer;
+}
+
+.lyutails_button {
+    width: 150px;
+    height: 40px;
+    user-select: none;
+}
+
+.lyutails_content {
+    color: $main;
+    font-family: 'Myth';
+    font-size: 36px;
+    transition: all 0.4s ease-in-out;
+}
+
+.lyutails_content:hover {
+    color: $hover; 
+    cursor: pointer;   
+}
+
+.lyutails_content:active {
+    color: $active; 
+    cursor: pointer;   
 }
