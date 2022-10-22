@@ -191,7 +191,10 @@ lyutailsButton.setAttribute('content', 'test content');
 lyutailsButton.setAttribute('class', 'lyutails_content');
 lyutailsButton.innerHTML = '@lyutails';
 
+let lanternLightTheme = document.createElement('div');
+lanternLightTheme.classList.add('lantern_light');
+mainWrapper.appendChild(lanternLightTheme);
 
-buttonLight.classList.add('light_button');
-buttonDark.classList.add('dark_button');
-
+let lanternDarkTheme = document.createElement('div');
+lanternDarkTheme.classList.add('lantern_dark');
+mainWrapper.appendChild(lanternDarkTheme);
