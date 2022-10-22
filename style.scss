@@ -20,8 +20,9 @@
 $main: #d81a46;
 $hover: #fd6488;
 $active: #31040f;
-$light_light: #fff714;
-$dark_light: #14ffc5;
+$dark_light: #fff714;
+$light_light: #14ffc5;
+$dark_background: #1c191a;
 
 
 .main_wrapper {
@@ -116,6 +117,16 @@ $dark_light: #14ffc5;
     background-color: transparent;
     border: 5px solid $main;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.new_content {
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    color: $main;
+    font-family: 'Graffiti';
+    font-size: 36px;
 }
 
 .game_field {
@@ -127,27 +138,47 @@ $dark_light: #14ffc5;
     border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
+    // justify-content: space-between;
+    // align-content: space-evenly;
 
-    & .game_line {
-        width: 410px;
-        height: 2px;
-        background-color: $main;
-        margin-top: 100px;
-        position: relative;
-    }
+    // & .game_line_1 {
+    //     width: 410px;
+    //     height: 2px;
+    //     background-color: $main;
+    //     //margin-top: 80px;
+    //     position: relative;
+    // }
+
+    // & .game_line_2 {
+    //     width: 410px;
+    //     height: 2px;
+    //     background-color: $main;
+    //     //margin-top: 120px;
+    //     position: relative;
+    // }
+
+    // & .game_line_3 {
+    //     width: 410px;
+    //     height: 2px;
+    //     background-color: $main;
+    //     //margin-top: 10px;
+    //     position: relative;
+    // }
 
     & .game_cell {
         width: 100px;
         height: 100px;
         position: relative;
-        background-color: $main;
-        opacity: 0.4;
-        z-index: 100;
+        background-color: none;
+        opacity: 0.4;        
         transition: all 0.4s ease-in-out;
+        z-index: 80;
+        border: 2px solid $main;
 
         &:hover {
             cursor: pointer;
             box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+            background-color: $main;           
         }
     }
 }
@@ -285,9 +316,8 @@ $dark_light: #14ffc5;
     width: 10px;
     height: 10px;
     display: inline-block;
-    background-image: url('./refs/moving_dark_1.png');
-    //transform: translate(1150px, -1505px);
-    box-shadow: 0 0 50px $dark_light;
+    background-image: url('./refs/moving_dark_1.png');    
+    box-shadow: 0 0 50px $light_light;
     animation-name: lights_light_anim_1;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -300,9 +330,8 @@ $dark_light: #14ffc5;
     width: 10px;
     height: 10px;
     display: inline-block;
-    background-image: url('./refs/moving_dark_2.png');
-    //transform: translate(1080px, -1500px);
-    box-shadow: 0 0 50px $dark_light;
+    background-image: url('./refs/moving_dark_2.png');    
+    box-shadow: 0 0 50px $light_light;
     animation-name: lights_light_anim_2;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -315,9 +344,8 @@ $dark_light: #14ffc5;
     width: 10px;
     height: 10px;
     display: inline-block;
-    background-image: url('./refs/moving_dark_3.png');
-    //transform: translate(1090px, -1540px);
-    box-shadow: 0 0 50px $dark_light;
+    background-image: url('./refs/moving_dark_3.png');    
+    box-shadow: 0 0 50px $light_light;
     animation-name: lights_light_anim_3;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -330,9 +358,8 @@ $dark_light: #14ffc5;
     width: 10px;
     height: 10px;
     display: inline-block;
-    background-image: url('./refs/moving_dark_4.png');
-    //transform: translate(1060px, -1520px);
-    box-shadow: 0 0 50px $dark_light;
+    background-image: url('./refs/moving_dark_4.png');    
+    box-shadow: 0 0 50px $red;
     animation-name: lights_light_anim_4;
     animation-duration: 15s;
     animation-timing-function: linear;

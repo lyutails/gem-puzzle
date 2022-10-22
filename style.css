@@ -140,25 +140,20 @@
   display: flex;
   flex-wrap: wrap;
 }
-.game_field .game_line {
-  width: 410px;
-  height: 2px;
-  background-color: #d81a46;
-  margin-top: 100px;
-  position: relative;
-}
 .game_field .game_cell {
   width: 100px;
   height: 100px;
   position: relative;
-  background-color: #d81a46;
+  background-color: none;
   opacity: 0.4;
-  z-index: 100;
   transition: all 0.4s ease-in-out;
+  z-index: 80;
+  border: 2px solid #d81a46;
 }
 .game_field .game_cell:hover {
   cursor: pointer;
   box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+  background-color: #d81a46;
 }
 
 .bottom_buttons_container {
@@ -312,7 +307,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_1.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_1;
           animation-name: lights_light_anim_1;
   -webkit-animation-duration: 15s;
@@ -331,7 +326,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_2.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_2;
           animation-name: lights_light_anim_2;
   -webkit-animation-duration: 15s;
@@ -350,7 +345,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_3.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_3;
           animation-name: lights_light_anim_3;
   -webkit-animation-duration: 15s;
@@ -369,7 +364,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_4.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_4;
           animation-name: lights_light_anim_4;
   -webkit-animation-duration: 15s;
