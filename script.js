@@ -198,3 +198,19 @@ mainWrapper.appendChild(lanternLightTheme);
 let lanternDarkTheme = document.createElement('div');
 lanternDarkTheme.classList.add('lantern_dark');
 mainWrapper.appendChild(lanternDarkTheme);
+
+let lightLightOne = document.createElement('div');
+lightLightOne.classList.add('moving_light_1');
+lanternLightTheme.appendChild(lightLightOne);
+
+let lightLightTwo = document.createElement('div');
+lightLightTwo.classList.add('moving_light_2');
+lanternLightTheme.appendChild(lightLightTwo);
+
+let lightLightThree = document.createElement('div');
+lightLightThree.classList.add('moving_light_3');
+lanternLightTheme.appendChild(lightLightThree);
+
+let lightLightFour = document.createElement('div');
+lightLightFour.classList.add('moving_light_4');
+lanternLightTheme.appendChild(lightLightFour);
