@@ -119,6 +119,11 @@ let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
 upButtonsFlex.appendChild(buttonNew);
 
+let newContent = document.createElement('div');
+newContent.classList.add('new_content');
+newContent.setAttribute('class', 'new_content');
+newContent.innerHTML = 'New';
+
 let buttonPause = document.createElement('div');
 buttonPause.classList.add('pause_button');
 upButtonsFlex.appendChild(buttonPause);
@@ -147,15 +152,25 @@ let gameField = document.createElement('div');
 gameField.classList.add('game_field');
 mainWrapper.appendChild(gameField);
 
-let gameLine = document.createElement('div');
-gameLine.classList.add('game_line');
-gameField.appendChild(gameLine);
+// let gameLineOne = document.createElement('div');
+// gameLineOne.classList.add('game_line_1');
+// gameField.appendChild(gameLineOne);
+
+// let gameLineTwo = document.createElement('div');
+// gameLineTwo.classList.add('game_line_2');
+// gameField.appendChild(gameLineTwo);
+
+// let gameLineThree = document.createElement('div');
+// gameLineThree.classList.add('game_line_3');
+// gameField.appendChild(gameLineThree);
 
 let gameCell = document.createElement('div');
 gameCell.classList.add('game_cell');
 gameField.appendChild(gameCell);
 
-Array(3).fill('game_line');
+// for (i = 0; i < 16; i++) {
+//     game_cell++;
+// };
 
 let bottomButtonsContainer = document.createElement('div');
 bottomButtonsContainer.classList.add('bottom_buttons_container');
