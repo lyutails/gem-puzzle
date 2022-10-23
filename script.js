@@ -199,6 +199,18 @@ let buttonDark = document.createElement('div');
 buttonDark.classList.add('button_dark');
 symbolButtonsContainer.appendChild(buttonDark);
 
+buttonDark.classList.toggle('active');
+buttonDark.addEventListener('click', function(e) {
+    let darkTheme = document.body;
+    darkTheme.classList.add('active');
+})
+
+buttonLight.classList.toggle('active');
+buttonLight.addEventListener('click', function(e) {
+    let darkTheme = document.body;
+    darkTheme.classList.remove('active');
+})
+
 let buttonSound = document.createElement('div');
 buttonSound.classList.add('button_sound');
 symbolButtonsContainer.appendChild(buttonSound);
@@ -235,3 +247,4 @@ lanternLightTheme.appendChild(lightLightThree);
 let lightLightFour = document.createElement('div');
 lightLightFour.classList.add('moving_light_4');
 lanternLightTheme.appendChild(lightLightFour);
+

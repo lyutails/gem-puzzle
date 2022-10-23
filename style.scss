@@ -259,7 +259,18 @@ $dark_background: #1c191a;
 
 .button_dark:active {
     background-image: url('./refs/icons/moon_active.png');
-    cursor: pointer;
+    cursor: pointer;    
+}
+
+.button_dark.active {    
+    cursor: pointer;    
+}
+
+body.active {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: $dark_background;
 }
 
 .button_sound {
@@ -361,7 +372,7 @@ $dark_background: #1c191a;
     height: 10px;
     display: inline-block;
     background-image: url('./refs/moving_dark_4.png');    
-    box-shadow: 0 0 50px $red;
+    box-shadow: 0 0 50px $light_light;
     animation-name: lights_light_anim_4;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -488,11 +499,4 @@ $dark_background: #1c191a;
     to {
         transform: translate(0vw, 0vh);
     }
-}
-
-
-
-
-.dark_theme {
-    background-color: $dark_background;
 }
