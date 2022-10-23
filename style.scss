@@ -185,20 +185,26 @@ $dark_background: #1c191a;
 
 .drop_down_menu:hover {
     cursor: pointer;
-    background-image: url('./refs/button_hover_4_full_size.jpg');
-    color: $hover;
+    background-image: url('./refs/button_hover_4_full_size.jpg');    
 }
 
 .drop_down_menu:active {
     cursor: pointer;
-    background-image: url('./refs/button_hover_4_full_size.jpg');
-    color: $dark_background;
+    background-image: url('./refs/button_hover_4_full_size.jpg');    
 }
 
 .menu_item {
     width: 90px;
     height: 40px;
     display: block;
+}
+
+.menu_item:hover {
+    color: $hover;
+}
+
+.menu_item:active {
+    color: $dark_background;
 }
 
 .drop_down_menu {

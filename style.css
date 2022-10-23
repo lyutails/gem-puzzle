@@ -200,19 +200,25 @@
 .drop_down_menu:hover {
   cursor: pointer;
   background-image: url("./refs/button_hover_4_full_size.jpg");
-  color: #ff6c8e;
 }
 
 .drop_down_menu:active {
   cursor: pointer;
   background-image: url("./refs/button_hover_4_full_size.jpg");
-  color: #1c191a;
 }
 
 .menu_item {
   width: 90px;
   height: 40px;
   display: block;
+}
+
+.menu_item:hover {
+  color: #ff6c8e;
+}
+
+.menu_item:active {
+  color: #1c191a;
 }
 
 .drop_down_menu {
