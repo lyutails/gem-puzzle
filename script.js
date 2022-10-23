@@ -285,7 +285,7 @@ buttonDark.classList.add('button_dark');
 symbolButtonsContainer.appendChild(buttonDark);
 
 buttonDark.classList.toggle('active');
-buttonDark.addEventListener('click', function(e) {
+buttonDark.addEventListener('click', function(j) {
     let darkTheme = document.body;
     darkTheme.classList.add('active');
     dragon.classList.add('active');
@@ -298,7 +298,7 @@ buttonDark.addEventListener('click', function(e) {
 })
 
 buttonLight.classList.toggle('active');
-buttonLight.addEventListener('click', function(e) {
+buttonLight.addEventListener('click', function(k) {
     let darkTheme = document.body;
     darkTheme.classList.remove('active');
     dragon.classList.remove('active');
@@ -313,6 +313,27 @@ buttonLight.addEventListener('click', function(e) {
 let buttonSound = document.createElement('div');
 buttonSound.classList.add('button_sound');
 symbolButtonsContainer.appendChild(buttonSound);
+buttonSound.addEventListener('click', function(l) {
+    buttonSound.classList.toggle('active');
+})
+
+// class Sound {
+//     constructor() {
+//         this.sound = true;
+//     }
+
+//     switchSound() {
+//         this.buttonSound.addEventListener('click', () => {
+//             this.sound = !this.sound;
+//             if(this.sound == true) {
+//                 this.buttonSound.style.backgroundImage = 'url(./refs/icons/megafon_1.png)';
+//             }
+//             else {
+//                 this.buttonSound.style.backgroundImage = 'url(./refs/icons/megafon_1_no_sound.png)';
+//             }
+//         });
+//     };
+// }
 
 let lyutailsButton = document.createElement('a');
 lyutailsButton.classList.add('lyutails_button');

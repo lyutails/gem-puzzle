@@ -391,6 +391,24 @@ body.active {
     cursor: pointer;
 }
 
+.button_sound.active {
+    width: 40px;
+    height: 40px;
+    background-image: url('./refs/icons/megafon_1_no_sound.png');
+    transition: all 0.4s ease-in-out;
+    user-select: none;  
+}
+
+.button_sound:hover.active {
+    background-image: url('./refs/icons/megafon_1_hover_no_sound.png');
+    cursor: pointer;
+}
+
+.button_sound:active.active {
+    background-image: url('./refs/icons/megafon_1_active_no_sound.png');
+    cursor: pointer;
+}
+
 .lyutails_button {
     width: 150px;
     height: 40px;
@@ -434,7 +452,7 @@ body.active {
     height: 10px;
     display: inline-block;
     background-image: url('./refs/moving_dark_1.png');    
-    box-shadow: 0 0 50px $light_light;
+    box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
     animation-name: lights_light_anim_1;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -444,7 +462,8 @@ body.active {
 }
 
 .moving_light_1.active {    
-    background-image: url('./refs/moving_light_1.png');     
+    background-image: url('./refs/moving_light_1.png');    
+    box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light; 
 }
 
 .moving_light_2 {
@@ -452,7 +471,7 @@ body.active {
     height: 10px;
     display: inline-block;
     background-image: url('./refs/moving_dark_2.png');    
-    box-shadow: 0 0 50px $light_light;
+    box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
     animation-name: lights_light_anim_2;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -462,7 +481,8 @@ body.active {
 }
 
 .moving_light_2.active {    
-    background-image: url('./refs/moving_light_2.png');     
+    background-image: url('./refs/moving_light_2.png');
+    box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;     
 }
 
 .moving_light_3 {
@@ -470,7 +490,7 @@ body.active {
     height: 10px;
     display: inline-block;
     background-image: url('./refs/moving_dark_3.png');    
-    box-shadow: 0 0 50px $light_light;
+    box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
     animation-name: lights_light_anim_3;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -480,7 +500,8 @@ body.active {
 }
 
 .moving_light_3.active {    
-    background-image: url('./refs/moving_light_3.png');     
+    background-image: url('./refs/moving_light_3.png'); 
+    box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;    
 }
 
 .moving_light_4 {
@@ -488,7 +509,7 @@ body.active {
     height: 10px;
     display: inline-block;
     background-image: url('./refs/moving_dark_4.png');    
-    box-shadow: 0 0 50px $light_light;
+    box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
     animation-name: lights_light_anim_4;
     animation-duration: 15s;
     animation-timing-function: linear;
@@ -498,7 +519,8 @@ body.active {
 }
 
 .moving_light_4.active {    
-    background-image: url('./refs/moving_light_4.png');     
+    background-image: url('./refs/moving_light_4.png');   
+    box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;  
 }
 
 @keyframes lights_light_anim_1 {
