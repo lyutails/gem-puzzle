@@ -249,13 +249,18 @@ let gameField = document.createElement('div');
 gameField.classList.add('game_field');
 mainWrapper.appendChild(gameField);
 
-let gameCell = document.createElement('div');
-gameCell.classList.add('game_cell');
-gameField.appendChild(gameCell);
+let fieldCells = document.createDocumentFragment();
+for(let i = 0; i < 16; i++) {
+    let gameCell = document.createElement('div');
+    gameCell.classList.add('game_cell');
+    fieldCells.appendChild(gameCell);
+}
+gameField.appendChild(fieldCells);
 
-// for (i = 0; i < 16; i++) {
-//     game_cell++;
-// };
+// const cells = new Array(16).fill(0).map((item, index) => index + 1);
+// cells.forEach((item, index) => {
+//     div.item = vlaue;
+// })
 
 let bottomButtonsContainer = document.createElement('div');
 bottomButtonsContainer.classList.add('bottom_buttons_container');
@@ -316,24 +321,6 @@ symbolButtonsContainer.appendChild(buttonSound);
 buttonSound.addEventListener('click', function(l) {
     buttonSound.classList.toggle('active');
 })
-
-// class Sound {
-//     constructor() {
-//         this.sound = true;
-//     }
-
-//     switchSound() {
-//         this.buttonSound.addEventListener('click', () => {
-//             this.sound = !this.sound;
-//             if(this.sound == true) {
-//                 this.buttonSound.style.backgroundImage = 'url(./refs/icons/megafon_1.png)';
-//             }
-//             else {
-//                 this.buttonSound.style.backgroundImage = 'url(./refs/icons/megafon_1_no_sound.png)';
-//             }
-//         });
-//     };
-// }
 
 let lyutailsButton = document.createElement('a');
 lyutailsButton.classList.add('lyutails_button');
