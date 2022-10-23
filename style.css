@@ -139,7 +139,7 @@
   transform: translate(480px, -1420px);
 }
 
-.new_button, .pause_button, .results_button, .drag_drop_menu {
+.new_button, .pause_button, .results_button, .drop_down_menu {
   width: 90px;
   height: 40px;
   background-color: transparent;
@@ -153,6 +153,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.2s ease-in-out;
+  background-image: none;
+}
+
+.new_button:hover {
+  color: #ff6c8e;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_1.jpg");
+}
+
+.pause_button:hover {
+  color: #ff6c8e;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_2.jpg");
+}
+
+.results_button:hover {
+  color: #ff6c8e;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_3.jpg");
+}
+
+.new_button:active {
+  color: #1c191a;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_1.jpg");
+}
+
+.pause_button:active {
+  color: #1c191a;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_2.jpg");
+}
+
+.results_button:active {
+  color: #1c191a;
+  cursor: pointer;
+  background-image: url("./refs/button_hover_3.jpg");
 }
 
 .game_field {
@@ -213,7 +255,7 @@
 }
 
 .rsschool_content:hover {
-  color: #fd6488;
+  color: #ff6c8e;
   cursor: pointer;
 }
 
@@ -321,7 +363,7 @@ body.active {
 }
 
 .lyutails_content:hover {
-  color: #fd6488;
+  color: #ff6c8e;
   cursor: pointer;
 }
 

@@ -18,7 +18,7 @@
 }
   
 $main: #d81a46;
-$hover: #fd6488;
+$hover: #ff6c8e;
 $active: #31040f;
 $dark_light: #fff714;
 $light_light: #14ffc5;
@@ -128,7 +128,7 @@ $dark_background: #1c191a;
     transform: translate(480px, -1420px);
 }
 
-.new_button, .pause_button, .results_button, .drag_drop_menu {
+.new_button, .pause_button, .results_button, .drop_down_menu {
     width: 90px;
     height: 40px;
     background-color: transparent;
@@ -142,6 +142,45 @@ $dark_background: #1c191a;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    background-image: none;
+}
+
+.new_button:hover {
+    color: $hover;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_1.jpg');
+}
+
+.pause_button:hover {
+    color: $hover;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_2.jpg');
+}
+
+.results_button:hover {
+    color: $hover;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_3.jpg');
+}
+
+.new_button:active {
+    color: $dark_background;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_1.jpg');
+}
+
+.pause_button:active {
+    color: $dark_background;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_2.jpg');
+}
+
+.results_button:active {
+    color: $dark_background;
+    cursor: pointer;
+    background-image: url('./refs/button_hover_3.jpg');
 }
 
 .game_field {
