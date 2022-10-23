@@ -421,6 +421,27 @@ body.active {
   cursor: pointer;
 }
 
+.button_sound.active {
+  width: 40px;
+  height: 40px;
+  background-image: url("./refs/icons/megafon_1_no_sound.png");
+  transition: all 0.4s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.button_sound:hover.active {
+  background-image: url("./refs/icons/megafon_1_hover_no_sound.png");
+  cursor: pointer;
+}
+
+.button_sound:active.active {
+  background-image: url("./refs/icons/megafon_1_active_no_sound.png");
+  cursor: pointer;
+}
+
 .lyutails_button {
   width: 150px;
   height: 40px;
@@ -466,7 +487,7 @@ body.active {
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_1.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
   -webkit-animation-name: lights_light_anim_1;
           animation-name: lights_light_anim_1;
   -webkit-animation-duration: 15s;
@@ -482,6 +503,7 @@ body.active {
 
 .moving_light_1.active {
   background-image: url("./refs/moving_light_1.png");
+  box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
 }
 
 .moving_light_2 {
@@ -489,7 +511,7 @@ body.active {
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_2.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
   -webkit-animation-name: lights_light_anim_2;
           animation-name: lights_light_anim_2;
   -webkit-animation-duration: 15s;
@@ -505,6 +527,7 @@ body.active {
 
 .moving_light_2.active {
   background-image: url("./refs/moving_light_2.png");
+  box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
 }
 
 .moving_light_3 {
@@ -512,7 +535,7 @@ body.active {
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_3.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
   -webkit-animation-name: lights_light_anim_3;
           animation-name: lights_light_anim_3;
   -webkit-animation-duration: 15s;
@@ -528,6 +551,7 @@ body.active {
 
 .moving_light_3.active {
   background-image: url("./refs/moving_light_3.png");
+  box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
 }
 
 .moving_light_4 {
@@ -535,7 +559,7 @@ body.active {
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_4.png");
-  box-shadow: 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
   -webkit-animation-name: lights_light_anim_4;
           animation-name: lights_light_anim_4;
   -webkit-animation-duration: 15s;
@@ -551,6 +575,7 @@ body.active {
 
 .moving_light_4.active {
   background-image: url("./refs/moving_light_4.png");
+  box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
 }
 
 @-webkit-keyframes lights_light_anim_1 {
