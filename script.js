@@ -166,7 +166,7 @@ let menuTextFour = document.createTextNode('6x6');
 menuItemFour.appendChild(menuTextFour);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemFour.addEventListener('click', function(d) {
+menuItemFour.addEventListener('click', function(f) {
     menuTextSelected.nodeValue = '6x6';
 })
 
@@ -177,7 +177,7 @@ let menuTextFive = document.createTextNode('7x7');
 menuItemFive.appendChild(menuTextFive);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemFive.addEventListener('click', function(d) {
+menuItemFive.addEventListener('click', function(g) {
     menuTextSelected.nodeValue = '7x7';
 })
 
@@ -188,7 +188,7 @@ let menuTextEight = document.createTextNode('8x8');
 menuItemSix.appendChild(menuTextEight);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemSix.addEventListener('click', function(d) {
+menuItemSix.addEventListener('click', function(h) {
     menuTextSelected.nodeValue = '8x8';
 })
 
@@ -196,9 +196,9 @@ dropDownMenu.addEventListener('click', function(e) {
     dropDownMenu.classList.toggle('active');
 });
 
-// dropDownMenu.addEventListener('mouseleave', function(b) {
-//     dropDownMenu.classList.toggle('active');
-// });
+dropDownMenu.addEventListener('mouseleave', function(b) {
+    dropDownMenu.classList.add('active');
+});
 
 let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
