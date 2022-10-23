@@ -204,6 +204,12 @@ buttonDark.addEventListener('click', function(e) {
     let darkTheme = document.body;
     darkTheme.classList.add('active');
     dragon.classList.add('active');
+    sakuraBranch.classList.add('active');
+    lanternLight.classList.add('active');
+    lightLightOne.classList.add('active');
+    lightLightTwo.classList.add('active');
+    lightLightThree.classList.add('active');
+    lightLightFour.classList.add('active');
 })
 
 buttonLight.classList.toggle('active');
@@ -211,6 +217,12 @@ buttonLight.addEventListener('click', function(e) {
     let darkTheme = document.body;
     darkTheme.classList.remove('active');
     dragon.classList.remove('active');
+    sakuraBranch.classList.remove('active');
+    lanternLight.classList.remove('active');
+    lightLightOne.classList.remove('active');
+    lightLightTwo.classList.remove('active');
+    lightLightThree.classList.remove('active');
+    lightLightFour.classList.remove('active');
 })
 
 let buttonSound = document.createElement('div');
@@ -226,27 +238,23 @@ lyutailsButton.innerHTML = '@lyutails';
 lyutailsButton.href = 'https://github.com/lyutails';
 lyutailsButton.style.textDecoration = 'none';
 
-let lanternLightTheme = document.createElement('div');
-lanternLightTheme.classList.add('lantern_light');
-mainWrapper.appendChild(lanternLightTheme);
-
-let lanternDarkTheme = document.createElement('div');
-lanternDarkTheme.classList.add('lantern_dark');
-mainWrapper.appendChild(lanternDarkTheme);
+let lanternLight = document.createElement('div');
+lanternLight.classList.add('lantern_light');
+mainWrapper.appendChild(lanternLight);
 
 let lightLightOne = document.createElement('div');
 lightLightOne.classList.add('moving_light_1');
-lanternLightTheme.appendChild(lightLightOne);
+lanternLight.appendChild(lightLightOne);
 
 let lightLightTwo = document.createElement('div');
 lightLightTwo.classList.add('moving_light_2');
-lanternLightTheme.appendChild(lightLightTwo);
+lanternLight.appendChild(lightLightTwo);
 
 let lightLightThree = document.createElement('div');
 lightLightThree.classList.add('moving_light_3');
-lanternLightTheme.appendChild(lightLightThree);
+lanternLight.appendChild(lightLightThree);
 
 let lightLightFour = document.createElement('div');
 lightLightFour.classList.add('moving_light_4');
-lanternLightTheme.appendChild(lightLightFour);
+lanternLight.appendChild(lightLightFour);
 

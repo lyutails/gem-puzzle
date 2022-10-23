@@ -78,6 +78,10 @@
   transform-origin: top right;
 }
 
+.sakura_branch.active {
+  background-image: url("./refs/sakura_branch_resize_dark.png");
+}
+
 @-webkit-keyframes sakura_anim {
   0% {
     transform: rotateZ(-4deg);
@@ -338,6 +342,10 @@ body.active {
   align-items: center;
 }
 
+.lantern_light.active {
+  background-image: url("./refs/stone_lantern_dark_lighting.png");
+}
+
 .moving_light_1 {
   width: 10px;
   height: 10px;
@@ -355,6 +363,10 @@ body.active {
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
   z-index: 50;
+}
+
+.moving_light_1.active {
+  background-image: url("./refs/moving_light_1.png");
 }
 
 .moving_light_2 {
@@ -376,6 +388,10 @@ body.active {
   z-index: 50;
 }
 
+.moving_light_2.active {
+  background-image: url("./refs/moving_light_2.png");
+}
+
 .moving_light_3 {
   width: 10px;
   height: 10px;
@@ -395,6 +411,10 @@ body.active {
   z-index: 50;
 }
 
+.moving_light_3.active {
+  background-image: url("./refs/moving_light_3.png");
+}
+
 .moving_light_4 {
   width: 10px;
   height: 10px;
@@ -412,6 +432,10 @@ body.active {
   -webkit-animation-delay: 3s;
           animation-delay: 3s;
   z-index: 50;
+}
+
+.moving_light_4.active {
+  background-image: url("./refs/moving_light_4.png");
 }
 
 @-webkit-keyframes lights_light_anim_1 {
