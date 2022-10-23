@@ -116,8 +116,11 @@ upButtonsFlex.classList.add('up_buttons_flex');
 mainWrapper.appendChild(upButtonsFlex);
 
 let dropDownMenu = document.createElement('div');
-dropDownMenu.classList.add('drag_drop_menu');
+dropDownMenu.classList.add('drop_down_menu');
 upButtonsFlex.appendChild(dropDownMenu);
+let menuText = document.createTextNode('4x4');
+dropDownMenu.appendChild(menuText);
+dropDownMenu.style.textAlign = 'center';
 
 let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
