@@ -281,10 +281,12 @@
   border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
 }
 .game_field .game_cell {
-  width: 100px;
-  height: 100px;
+  width: 98px;
+  height: 98px;
   position: relative;
   background-color: none;
   opacity: 0.4;
