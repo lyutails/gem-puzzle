@@ -197,6 +197,7 @@ $dark_background: #1c191a;
     width: 150px;
     height: 40px;
     user-select: none;
+    text-decoration: none;
 }
 
 .rsschool_content {
@@ -204,6 +205,7 @@ $dark_background: #1c191a;
     font-family: 'Myth';
     font-size: 36px;
     transition: all 0.4s ease-in-out;
+    text-decoration: none;
 }
 
 .rsschool_content:hover {
@@ -486,4 +488,11 @@ $dark_background: #1c191a;
     to {
         transform: translate(0vw, 0vh);
     }
+}
+
+
+
+
+.dark_theme {
+    background-color: $dark_background;
 }

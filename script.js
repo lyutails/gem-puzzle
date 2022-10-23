@@ -176,12 +176,16 @@ let bottomButtonsContainer = document.createElement('div');
 bottomButtonsContainer.classList.add('bottom_buttons_container');
 mainWrapper.appendChild(bottomButtonsContainer);
 
-let rsschoolButton = document.createElement('div');
-rsschoolButton.classList.add('rsschool_button');
+let rsschoolButton = document.createElement('a');
+let rsschoolText = document.createTextNode('RS School');
+rsschoolButton.appendChild(rsschoolText);
+rsschoolButton.title = 'RS School';
+rsschoolButton.href = 'https://rs.school/';
 bottomButtonsContainer.appendChild(rsschoolButton);
-rsschoolButton.setAttribute('content', 'test content');
+rsschoolButton.classList.add('rsschool_button');
 rsschoolButton.setAttribute('class', 'rsschool_content');
 rsschoolButton.innerHTML = 'RS School';
+rsschoolButton.style.textDecoration = 'none'; 
 
 let symbolButtonsContainer = document.createElement('div');
 symbolButtonsContainer.classList.add('symbol_buttons');
@@ -199,12 +203,14 @@ let buttonSound = document.createElement('div');
 buttonSound.classList.add('button_sound');
 symbolButtonsContainer.appendChild(buttonSound);
 
-let lyutailsButton = document.createElement('div');
+let lyutailsButton = document.createElement('a');
 lyutailsButton.classList.add('lyutails_button');
 bottomButtonsContainer.appendChild(lyutailsButton);
 lyutailsButton.setAttribute('content', 'test content');
 lyutailsButton.setAttribute('class', 'lyutails_content');
 lyutailsButton.innerHTML = '@lyutails';
+lyutailsButton.href = 'https://github.com/lyutails';
+lyutailsButton.style.textDecoration = 'none';
 
 let lanternLightTheme = document.createElement('div');
 lanternLightTheme.classList.add('lantern_light');
