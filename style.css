@@ -128,6 +128,16 @@
   background-color: transparent;
   border: 5px solid #d81a46;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.new_content {
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+  color: #d81a46;
+  font-family: "Graffiti";
+  font-size: 36px;
 }
 
 .game_field {
@@ -176,6 +186,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  text-decoration: none;
 }
 
 .rsschool_content {
@@ -183,6 +194,7 @@
   font-family: "Myth";
   font-size: 36px;
   transition: all 0.4s ease-in-out;
+  text-decoration: none;
 }
 
 .rsschool_content:hover {
@@ -243,6 +255,17 @@
 .button_dark:active {
   background-image: url("./refs/icons/moon_active.png");
   cursor: pointer;
+}
+
+.button_dark.active {
+  cursor: pointer;
+}
+
+body.active {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #1c191a;
 }
 
 .button_sound {
@@ -307,7 +330,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_1.png");
-  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_1;
           animation-name: lights_light_anim_1;
   -webkit-animation-duration: 15s;
@@ -326,7 +349,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_2.png");
-  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_2;
           animation-name: lights_light_anim_2;
   -webkit-animation-duration: 15s;
@@ -345,7 +368,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_3.png");
-  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_3;
           animation-name: lights_light_anim_3;
   -webkit-animation-duration: 15s;
@@ -364,7 +387,7 @@
   height: 10px;
   display: inline-block;
   background-image: url("./refs/moving_dark_4.png");
-  box-shadow: 0 0 50px #14ffc5, 0 0 50px #14ffc5;
+  box-shadow: 0 0 50px #14ffc5;
   -webkit-animation-name: lights_light_anim_4;
           animation-name: lights_light_anim_4;
   -webkit-animation-duration: 15s;
