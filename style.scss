@@ -183,6 +183,18 @@ $dark_background: #1c191a;
     background-image: url('./refs/button_hover_3.jpg');
 }
 
+.drop_down_menu:hover {
+    cursor: pointer;
+    background-image: url('./refs/button_hover_4.jpg');
+    color: $hover;
+}
+
+.drop_down_menu:active {
+    cursor: pointer;
+    background-image: url('./refs/button_hover_4.jpg');
+    color: $dark_background;
+}
+
 .game_field {
     width: 410px;
     height: 410px;
