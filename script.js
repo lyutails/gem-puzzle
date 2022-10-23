@@ -122,6 +122,7 @@ let menuText = document.createTextNode('4x4');
 dropDownMenu.appendChild(menuText);
 dropDownMenu.style.textAlign = 'center';
 
+
 let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
 upButtonsFlex.appendChild(buttonNew);

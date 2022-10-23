@@ -197,6 +197,18 @@
   background-image: url("./refs/button_hover_3.jpg");
 }
 
+.drop_down_menu:hover {
+  cursor: pointer;
+  background-image: url("./refs/button_hover_4.jpg");
+  color: #ff6c8e;
+}
+
+.drop_down_menu:active {
+  cursor: pointer;
+  background-image: url("./refs/button_hover_4.jpg");
+  color: #1c191a;
+}
+
 .game_field {
   width: 410px;
   height: 410px;
