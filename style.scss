@@ -51,6 +51,19 @@ $dark_background: #1c191a;
     transform: translate(20px, -730px);    
 }
 
+.dragon.active {
+    width: 500px;
+    height: 675px;
+    background-image: url('./refs/japanese\ dragon\ dark.png');
+    margin: 0 auto;
+    margin-top: 50px;
+    /* position: absolute; */
+    z-index: 10;
+    opacity: 0.4;
+    transform: translate(20px, -650px);    
+    background-repeat: no-repeat;
+}
+
 .sakura_wrapper {
     width: 500px;
     height: 469px;
