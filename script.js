@@ -203,12 +203,14 @@ buttonDark.classList.toggle('active');
 buttonDark.addEventListener('click', function(e) {
     let darkTheme = document.body;
     darkTheme.classList.add('active');
+    dragon.classList.add('active');
 })
 
 buttonLight.classList.toggle('active');
 buttonLight.addEventListener('click', function(e) {
     let darkTheme = document.body;
     darkTheme.classList.remove('active');
+    dragon.classList.remove('active');
 })
 
 let buttonSound = document.createElement('div');
