@@ -115,13 +115,55 @@ let upButtonsFlex = document.createElement('div');
 upButtonsFlex.classList.add('up_buttons_flex');
 mainWrapper.appendChild(upButtonsFlex);
 
-let dropDownMenu = document.createElement('div');
-dropDownMenu.classList.add('drop_down_menu');
+let dropDownMenu = document.createElement('ul');
+dropDownMenu.classList.add('drop_down_menu', 'active');
 upButtonsFlex.appendChild(dropDownMenu);
-let menuText = document.createTextNode('4x4');
-dropDownMenu.appendChild(menuText);
+
+let menuItemOne = document.createElement('li');
+menuItemOne.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemOne);
+let menuTextOne = document.createTextNode('3x3');
+menuItemOne.appendChild(menuTextOne);
 dropDownMenu.style.textAlign = 'center';
 
+let menuItemTwo = document.createElement('li');
+menuItemTwo.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemTwo);
+let menuTextTwo = document.createTextNode('4x4');
+menuItemTwo.appendChild(menuTextTwo);
+dropDownMenu.style.textAlign = 'center';
+
+let menuItemThree = document.createElement('li');
+menuItemThree.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemThree);
+let menuTextThree = document.createTextNode('5x5');
+menuItemThree.appendChild(menuTextThree);
+dropDownMenu.style.textAlign = 'center';
+
+let menuItemFour = document.createElement('li');
+menuItemFour.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemFour);
+let menuTextFour = document.createTextNode('6x6');
+menuItemFour.appendChild(menuTextFour);
+dropDownMenu.style.textAlign = 'center';
+
+let menuItemFive = document.createElement('li');
+menuItemFive.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemFive);
+let menuTextFive = document.createTextNode('7x7');
+menuItemFive.appendChild(menuTextFive);
+dropDownMenu.style.textAlign = 'center';
+
+let menuItemSix = document.createElement('li');
+menuItemSix.classList.add('menu_item');
+dropDownMenu.appendChild(menuItemSix);
+let menuTextEight = document.createTextNode('8x8');
+menuItemSix.appendChild(menuTextEight);
+dropDownMenu.style.textAlign = 'center';
+
+dropDownMenu.addEventListener('click', function(e) {
+    dropDownMenu.classList.toggle('active');
+});
 
 let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
@@ -143,6 +185,18 @@ upButtonsFlex.appendChild(buttonTopResults);
 let resultsText = document.createTextNode('Results');
 buttonTopResults.appendChild(resultsText);
 buttonTopResults.style.textAlign = 'center';
+
+let moves = document.createElement('div');
+moves.classList.add('moves');
+mainWrapper.appendChild(moves);
+let movesText = document.createTextNode('Moves:');
+moves.appendChild(movesText);
+
+let time = document.createElement('div');
+time.classList.add('time');
+mainWrapper.appendChild(time);
+let timeText = document.createTextNode('Time:');
+time.appendChild(timeText);
 
 let sakuraWrapper = document.createElement('div');
 sakuraWrapper.classList.add('sakura_wrapper');

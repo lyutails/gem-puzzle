@@ -139,7 +139,7 @@
   transform: translate(480px, -1420px);
 }
 
-.new_button, .pause_button, .results_button, .drop_down_menu {
+.new_button, .pause_button, .results_button {
   width: 90px;
   height: 40px;
   background-color: transparent;
@@ -199,14 +199,71 @@
 
 .drop_down_menu:hover {
   cursor: pointer;
-  background-image: url("./refs/button_hover_4.jpg");
+  background-image: url("./refs/button_hover_4_full_size.jpg");
   color: #ff6c8e;
 }
 
 .drop_down_menu:active {
   cursor: pointer;
-  background-image: url("./refs/button_hover_4.jpg");
+  background-image: url("./refs/button_hover_4_full_size.jpg");
   color: #1c191a;
+}
+
+.menu_item {
+  width: 90px;
+  height: 40px;
+  display: block;
+}
+
+.drop_down_menu {
+  width: 90px;
+  height: 240px;
+  background-color: transparent;
+  border: 5px solid #d81a46;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Graffiti";
+  font-size: 22px;
+  color: #d81a46;
+  padding-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.2s ease-in-out;
+  background-image: none;
+  list-style: none;
+  overflow: hidden;
+}
+
+.drop_down_menu.active {
+  height: 40px;
+}
+
+.moves {
+  width: 150px;
+  height: 40px;
+  font-family: "Graffiti";
+  font-size: 22px;
+  color: #d81a46;
+  transform: translate(320px, -1330px);
+  position: absolute;
+}
+
+.time {
+  width: 150px;
+  height: 40px;
+  font-family: "Graffiti";
+  font-size: 22px;
+  color: #d81a46;
+  transform: translate(580px, -1330px);
+  position: absolute;
 }
 
 .game_field {
