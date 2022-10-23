@@ -115,26 +115,30 @@ let upButtonsFlex = document.createElement('div');
 upButtonsFlex.classList.add('up_buttons_flex');
 mainWrapper.appendChild(upButtonsFlex);
 
+let dropDownMenu = document.createElement('div');
+dropDownMenu.classList.add('drag_drop_menu');
+upButtonsFlex.appendChild(dropDownMenu);
+
 let buttonNew = document.createElement('div');
 buttonNew.classList.add('new_button');
 upButtonsFlex.appendChild(buttonNew);
-
-let newContent = document.createElement('div');
-newContent.classList.add('new_content');
-newContent.setAttribute('class', 'new_content');
-newContent.innerHTML = 'New';
+let newText = document.createTextNode('New');
+buttonNew.appendChild(newText);
+buttonNew.style.textAlign = 'center';
 
 let buttonPause = document.createElement('div');
 buttonPause.classList.add('pause_button');
 upButtonsFlex.appendChild(buttonPause);
+let pauseText = document.createTextNode('Pause');
+buttonPause.appendChild(pauseText);
+buttonPause.style.textAlign = 'center';
 
 let buttonTopResults = document.createElement('div');
 buttonTopResults.classList.add('results_button');
 upButtonsFlex.appendChild(buttonTopResults);
-
-let dragDropMenu = document.createElement('div');
-dragDropMenu.classList.add('drag_drop_menu');
-upButtonsFlex.appendChild(dragDropMenu);
+let resultsText = document.createTextNode('Results');
+buttonTopResults.appendChild(resultsText);
+buttonTopResults.style.textAlign = 'center';
 
 let sakuraWrapper = document.createElement('div');
 sakuraWrapper.classList.add('sakura_wrapper');
@@ -151,18 +155,6 @@ sakuraBranch.appendChild(ladyBug);
 let gameField = document.createElement('div');
 gameField.classList.add('game_field');
 mainWrapper.appendChild(gameField);
-
-// let gameLineOne = document.createElement('div');
-// gameLineOne.classList.add('game_line_1');
-// gameField.appendChild(gameLineOne);
-
-// let gameLineTwo = document.createElement('div');
-// gameLineTwo.classList.add('game_line_2');
-// gameField.appendChild(gameLineTwo);
-
-// let gameLineThree = document.createElement('div');
-// gameLineThree.classList.add('game_line_3');
-// gameField.appendChild(gameLineThree);
 
 let gameCell = document.createElement('div');
 gameCell.classList.add('game_cell');

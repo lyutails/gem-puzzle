@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Graffiti";
-    src: url("./refs/fonts/Comic\ Sans\ MS/") format("woff");
+    src: url("./refs/fonts/Comic_Sans_MS/Comic_Sans_MS.woff") format("woff");
     font-weight: 400;
     font-style: normal;
 }
@@ -130,20 +130,18 @@ $dark_background: #1c191a;
 
 .new_button, .pause_button, .results_button, .drag_drop_menu {
     width: 90px;
-    height: 30px;
+    height: 40px;
     background-color: transparent;
     border: 5px solid $main;
     border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.new_content {
-    width: 80px;
-    height: 40px;
-    display: inline-block;
-    color: $main;
+    box-sizing: border-box;    
     font-family: 'Graffiti';
-    font-size: 36px;
+    font-size: 22px;
+    color: $main;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game_field {
