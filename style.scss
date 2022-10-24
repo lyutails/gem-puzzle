@@ -282,7 +282,7 @@ $numbers_night_theme: #e9cccc;
         height: 24%;
         position: relative;
         background-color: none;
-        opacity: 0.4;        
+        //opacity:  0.4;        
         transition: all 0.4s ease-in-out;
         z-index: 80;
         border: 2px solid $main;
@@ -294,8 +294,8 @@ $numbers_night_theme: #e9cccc;
         &:hover {
             cursor: pointer;
             box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
-            background-color: $main;           
-        }
+            background-color: rgba(216, 26, 70, 0.4);;           
+        }        
     }
 }
 
@@ -310,6 +310,7 @@ $numbers_night_theme: #e9cccc;
     flex-wrap: wrap;
     text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
     user-select: none;
+    opacity: rgba(216, 26, 70, 1);
 }
 
 .bottom_buttons_container {
