@@ -301,7 +301,7 @@ $numbers_light_theme_hover: #fffccd;
 }
 
 .cell_number {
-    width: 100%;
+    width: 40%;
     height: 100%;
     font-family: "Yuji Boku";
     font-size: 30px;
@@ -321,6 +321,10 @@ $numbers_light_theme_hover: #fffccd;
 .cell_number:hover {    
     text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
     transition: all 0.4 ease-in-out;  
+}
+
+.cell_number.active {    
+    color: $numbers_night_theme;
 }
 
 .bottom_buttons_container {
