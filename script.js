@@ -273,14 +273,15 @@ function printGame(number) {
     for (let i = 0; i < number * number; i++) {
         let gameCell = document.createElement('div');
         gameCell.classList.add('game_cell');
+        gameCell.setAttribute('data-matrixId', `${i + 1}`);
         fieldCells.appendChild(gameCell);
 
         const japaneseNumbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
-        '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
-        '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
-        , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
-        , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
-        , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];          
+            '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
+            '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
+            , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
+            , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
+            , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];
 
         let cellNumber = document.createElement('div');
         cellNumber.classList.add('cell_number');
@@ -298,6 +299,8 @@ function printGame(number) {
         gameCell.appendChild(cellNumber);
         numbers.forEach(() => cellNumber.innerText = winResult[i]);
 
+        //gameCell.style.transition = 'all 2s';
+
         if (winResult[i] === number * number) {
             gameCell.firstElementChild.style.fontSize = '0';
             gameCell.style.backgroundImage = "url('./refs/neko_2.png')";
@@ -307,25 +310,41 @@ function printGame(number) {
     gameField.appendChild(fieldCells);
     const myMatrix = getMatrixFromArray(numbers, number);
     placeCells(myMatrix, [...gameField.childNodes]);
-    console.log([...gameField.childNodes]);
 
-    buttonNew.addEventListener('click', function(n) {
+    buttonNew.addEventListener('click', function (n) {
         printGame(number);
+    })
+
+    gameField.addEventListener('click', (event) => {
+        const gameCell = event.target.closest('.game_cell');
+        if (!gameCell) return;
+
+        const nekoManeki = number * number;
+        const cellNode = +gameCell.dataset.matrixid;
+        const cellCoordinates = findCoordinatesByNumber(cellNode, myMatrix);
+        const emptyCellCoordinates = findCoordinatesByNumber(nekoManeki, myMatrix);
+        const isValid = isValidForSwap(cellCoordinates, emptyCellCoordinates);        
+        if(isValid === true) {
+            replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
+            placeCells(myMatrix, [...gameField.childNodes]);
+            if(checkWin(myMatrix, winResult) === true) {
+                alert('console.lox()');
+            };
+        }        
     })
 }
 
-function placeCells (matrix, cells) {
+function placeCells(matrix, cells) {
     const moveStep = 100;
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
             const value = matrix[y][x];
             const cell = cells[value - 1];
             cell.style.transform = `translate3D(${x * moveStep}%, ${y * moveStep}%, 0)`;
+            //cell.style.transition = 'all 2s';
         }
     }
 }
-
-// на геймфилд повесить слушатель, брать клетку, брать котика - смотреть можно ли их переставить и заново считать плейcселлс
 
 function shuffle(numbers) {
     for (let i = numbers.length - 1; i > 0; i--) {
@@ -375,5 +394,34 @@ function getMatrixFromArray(numbers, currentFrame) {
         matrix[y][x] = numbers[i];
         x++;
     }
-    return matrix
+    return matrix;
+}
+
+function findCoordinatesByNumber(number, matrix) {
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] === number) {
+                return { x, y };
+            }
+        }
+    }
+    return null;
+}
+
+function isValidForSwap(coords1, coords2) {
+    const diffX = Math.abs(coords1.x - coords2.x);
+    const diffY = Math.abs(coords1.y - coords2.y);
+
+    return (diffX === 1 || diffY === 1) &&
+        (coords1.x === coords2.x || coords1.y === coords2.y);
+}
+
+function replaceCells(coords1, coords2, matrix) {
+    const currentPosition = matrix[coords1.y][coords1.x];
+    matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
+    matrix[coords2.y][coords2.x] = currentPosition;
+}
+
+function checkWin(matrix, winArray) {    
+    return matrix.flat().join('') === winArray.join('');    
 }
