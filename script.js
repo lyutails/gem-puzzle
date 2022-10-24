@@ -4,6 +4,7 @@ let gameTime = 0;
 let fieldSize = 4;
 let isSound = true;
 let saveMatrix = [];
+let isDark = false;
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -205,6 +206,7 @@ buttonDark.addEventListener('click', function (j) {
     colorNumbers.forEach((element) => {
         element.classList.add('active');
     });
+    isDark=true;
 })
 
 buttonLight.classList.toggle('active');
@@ -222,6 +224,7 @@ buttonLight.addEventListener('click', function (k) {
     colorNumbers.forEach((element) => {
         element.classList.remove('active');
     });
+    isDark=false;
 })
 
 let buttonSound = document.createElement('div');
@@ -284,6 +287,12 @@ function printGame(number) {
             , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];
 
         let cellNumber = document.createElement('div');
+        if (isDark) {
+            gameCell.classList.add('active');
+        }
+        if (!isDark) {
+            gameCell.classList.remove('active');
+        }
         cellNumber.classList.add('cell_number');
         gameCell.style.width = `${100 / number}%`;
         gameCell.style.height = `${100 / number}%`;
@@ -308,31 +317,31 @@ function printGame(number) {
         }
     }
     gameField.appendChild(fieldCells);
-    const myMatrix = getMatrixFromArray(numbers, number);
-    placeCells(myMatrix, [...gameField.childNodes]);
-
-    buttonNew.addEventListener('click', function (n) {
-        printGame(number);
-    })
-
-    gameField.addEventListener('click', (event) => {
-        const gameCell = event.target.closest('.game_cell');
-        if (!gameCell) return;
-
-        const nekoManeki = number * number;
-        const cellNode = +gameCell.dataset.matrixid;
-        const cellCoordinates = findCoordinatesByNumber(cellNode, myMatrix);
-        const emptyCellCoordinates = findCoordinatesByNumber(nekoManeki, myMatrix);
-        const isValid = isValidForSwap(cellCoordinates, emptyCellCoordinates);        
-        if(isValid === true) {
-            replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
-            placeCells(myMatrix, [...gameField.childNodes]);
-            if(checkWin(myMatrix, winResult) === true) {
-                alert('console.lox()');
-            };
-        }        
-    })
+    myMatrix = getMatrixFromArray(numbers, number);
+    placeCells(myMatrix, [...gameField.childNodes]);       
 }
+
+gameField.addEventListener('click', (event) => {
+    const gameCell = event.target.closest('.game_cell');
+    if (!gameCell) return;
+
+    const nekoManeki = fieldSize * fieldSize;
+    const cellNode = +gameCell.dataset.matrixid;
+    const cellCoordinates = findCoordinatesByNumber(cellNode, myMatrix);
+    const emptyCellCoordinates = findCoordinatesByNumber(nekoManeki, myMatrix);
+    const isValid = isValidForSwap(cellCoordinates, emptyCellCoordinates);        
+    if(isValid === true) {
+        replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
+        placeCells(myMatrix, [...gameField.childNodes]);
+        if(checkWin(myMatrix, winResult) === true) {
+            alert('console.lox()');
+        };
+    }        
+})
+
+buttonNew.addEventListener('click', function (n) {
+    printGame(fieldSize);
+})
 
 function placeCells(matrix, cells) {
     const moveStep = 100;
