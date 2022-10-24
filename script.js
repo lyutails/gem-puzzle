@@ -7,6 +7,7 @@ let saveMatrix = [];
 let isDark = false;
 let newShuffle = new Audio('./refs/sound/shuffle_chimes.wav');
 let chimeStep = new Audio('./refs/sound/move_150_bell_tree_loop.wav');
+let isPause = false;
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -152,6 +153,15 @@ upButtonsFlex.appendChild(buttonPause);
 let pauseText = document.createTextNode('Pause');
 buttonPause.appendChild(pauseText);
 buttonPause.style.textAlign = 'center';
+buttonPause.addEventListener('click', function(y) {
+    isPause = !isPause;
+    if(isPause) {
+        gameField.style.pointerEvents = 'none';
+        pauseText.textContent = 'Play';
+    }    
+    else if(!isPause) {gameField.style.pointerEvents = 'all';
+    pauseText.textContent = 'Pause';}
+})
 
 let buttonTopResults = document.createElement('div');
 buttonTopResults.classList.add('results_button');

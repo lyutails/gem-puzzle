@@ -163,6 +163,25 @@ $numbers_light_theme_hover: #fffccd;
     background-image: url('./refs/button_hover_1.jpg');
 }
 
+.pause_button {
+    width: 90px;
+    height: 40px;
+    background-color: transparent;
+    border: 5px solid $main;
+    border-radius: 4px;
+    box-sizing: border-box;    
+    font-family: 'Graffiti';
+    font-size: 22px;
+    color: $main;
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    background-image: none;    
+}
+
 .pause_button:hover {
     color: $hover;
     cursor: pointer;
