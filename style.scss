@@ -298,34 +298,38 @@ $numbers_light_theme_hover: #fffccd;
             border: transparent;          
         }        
     }
+
+    .cell_number {
+        width: 40%;
+        height: 100%;
+        font-family: "Yuji Boku";
+        font-size: 30px;
+        color: $dark_background;    
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
+        user-select: none;
+        opacity: rgba(216, 26, 70, 1);
+        transition: all 0.4 ease-in-out;    
+    }
+    
+    .game_cell:hover .cell_number {    
+        text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
+        transition: all 0.4 ease-in-out;  
+    }
+    
+    .active {    
+        .cell_number {
+            color: $numbers_night_theme;
+        }
+    }
 }
 
-.cell_number {
-    width: 40%;
-    height: 100%;
-    font-family: "Yuji Boku";
-    font-size: 30px;
-    color: $dark_background;    
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
-    user-select: none;
-    opacity: rgba(216, 26, 70, 1);
-    transition: all 0.4 ease-in-out;
-}
 
-.cell_number:hover {    
-    text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
-    transition: all 0.4 ease-in-out;  
-}
-
-.cell_number.active {    
-    color: $numbers_night_theme;
-}
 
 .bottom_buttons_container {
     width: 480px;

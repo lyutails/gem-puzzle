@@ -166,7 +166,10 @@ for(let i = 0; i < 16; i++) {
     cellNumber.classList.add('cell_number');
     gameCell.appendChild(cellNumber);
     numbers.forEach(() => cellNumber.innerText = numbers[i]);
-
+    // if(numbers[i = 16]) {
+    //     cellNumber.innetText = '';
+    // }
+    
     buttonNew.addEventListener('click', (q) => {                   
         shuffle(numbers).map(el => gameCell);               
     })
@@ -199,7 +202,7 @@ for(let i = 0; i < 16; i++) {
     //     sliderCards.style.transition=''; 
     //   }
       
-    //   init ();
+    //   init ();   
 }
 gameField.appendChild(fieldCells);
 
@@ -230,6 +233,7 @@ let buttonDark = document.createElement('div');
 buttonDark.classList.add('button_dark');
 symbolButtonsContainer.appendChild(buttonDark);
 
+const colorNumbers = Array.from(gameField.childNodes);
 buttonDark.classList.toggle('active');
 buttonDark.addEventListener('click', function(j) {
     let darkTheme = document.body;
@@ -240,7 +244,10 @@ buttonDark.addEventListener('click', function(j) {
     lightLightOne.classList.add('active');
     lightLightTwo.classList.add('active');
     lightLightThree.classList.add('active');
-    lightLightFour.classList.add('active');    
+    lightLightFour.classList.add('active');     
+    colorNumbers.forEach((element) => {
+        element.classList.add('active');
+    });    
 })
 
 buttonLight.classList.toggle('active');
@@ -254,6 +261,9 @@ buttonLight.addEventListener('click', function(k) {
     lightLightTwo.classList.remove('active');
     lightLightThree.classList.remove('active');
     lightLightFour.classList.remove('active');    
+    colorNumbers.forEach((element) => {
+        element.classList.remove('active');
+    });       
 })
 
 let buttonSound = document.createElement('div');
@@ -292,3 +302,6 @@ let lightLightFour = document.createElement('div');
 lightLightFour.classList.add('moving_light_4');
 lanternLight.appendChild(lightLightFour);
 
+const nekoManeki = colorNumbers.at(-1);
+nekoManeki.firstElementChild.style.fontSize = '0';
+nekoManeki.style.backgroundImage = "url('./refs/neko_2.png')";
