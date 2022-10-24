@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -267,8 +268,9 @@ $numbers_light_theme_hover: #fffccd;
 }
 
 .game_field {
-    width: 410px;
-    height: 410px;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
     border: 5px solid $main;
     position: relative;
     transform: translate(315px, -1280px);
@@ -279,8 +281,8 @@ $numbers_light_theme_hover: #fffccd;
     align-content: space-between;
  
     & .game_cell {
-        width: 24%;
-        height: 24%;
+        width: 25%;
+        height: 25%;
         position: relative;
         background-color: none;          
         transition: all 0.4s ease-in-out;
