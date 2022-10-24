@@ -15,6 +15,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "Yuji Boku";
+  src: url("./refs/fonts/Yuji_Boku/YujiBoku-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 .main_wrapper {
   width: 1000px;
   height: 100vh;
@@ -260,6 +266,10 @@
   color: #d81a46;
   transform: translate(320px, -1330px);
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .time {
@@ -270,6 +280,10 @@
   color: #d81a46;
   transform: translate(580px, -1330px);
   position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .game_field {
@@ -285,19 +299,38 @@
   align-content: space-between;
 }
 .game_field .game_cell {
-  width: 98px;
-  height: 98px;
+  width: 24%;
+  height: 24%;
   position: relative;
   background-color: none;
   opacity: 0.4;
   transition: all 0.4s ease-in-out;
   z-index: 80;
   border: 2px solid #d81a46;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .game_field .game_cell:hover {
   cursor: pointer;
   box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
   background-color: #d81a46;
+}
+
+.cell_number {
+  width: 80px;
+  height: 80px;
+  font-family: "Yuji Boku";
+  font-size: 30px;
+  color: #1c191a;
+  display: inline-block;
+  text-align: center;
+  flex-wrap: wrap;
+  text-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5, 0 0 10px #14ffc5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .bottom_buttons_container {

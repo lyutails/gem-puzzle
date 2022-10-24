@@ -1,103 +1,81 @@
 
-const numbers = [
-    {
-        number: '一',
-        id: 'one',
-    },
-    {
-        number: '二',
-        id: 'two',
-    },
-    {
-        number: '三',
-        id: 'three',
-    },
-    {
-        number: '四',
-        id: 'four',
-    },
-    {
-        number: '五',
-        id: 'five',
-    },
-    {
-        number: '六',
-        id: 'six',
-    },
-    {
-        number: '七',
-        id: 'seven',
-    },
-    {
-        number: '八',
-        id: 'eight',
-    },
-    {
-        number: '九',
-        id: 'nine',
-    },
-    {
-        number: '十',
-        id: 'ten',
-    },
-    {
-        number: '十一',
-        id: 'eleven',
-    },
-    {
-        number: '十二',
-        id: 'twelwe',
-    },
-    {
-        number: '十三',
-        id: 'thirteen',
-    },
-    {
-        number: '十四',
-        id: 'fourteen',
-    },
-    {
-        number: '十五',
-        id: 'fifteen',
-    },
-    {
-        number: '十六',
-        id: 'sixteen',
-    },
-    {
-        number: '十七',
-        id: 'seventeen',
-    },
-    {
-        number: '十八',
-        id: 'eighteen',
-    },
-    {
-        number: '十九',
-        id: 'nineteen',
-    },
-    {
-        number: '二十一',
-        id: 'twenty_one',
-    },
-    {
-        number: '二十二',
-        id: 'twenty_two',
-    },
-    {
-        number: '二十三',
-        id: 'twenty_three',
-    },
-    {
-        number: '二十四',
-        id: 'twenty_four',
-    },
-    {
-        number: '二十五',
-        id: 'twenty_five',
-    },
-]
-
+// const numbers = [
+//     {
+//         number: '一',        
+//     },
+//     {
+//         number: '二',        
+//     },
+//     {
+//         number: '三',        
+//     },
+//     {
+//         number: '四',        
+//     },
+//     {
+//         number: '五',        
+//     },
+//     {
+//         number: '六',        
+//     },
+//     {
+//         number: '七',        
+//     },
+//     {
+//         number: '八',       
+//     },
+//     {
+//         number: '九',        
+//     },
+//     {
+//         number: '十',        
+//     },
+//     {
+//         number: '十一',        
+//     },
+//     {
+//         number: '十二',        
+//     },
+//     {
+//         number: '十三',        
+//     },
+//     {
+//         number: '十四',        
+//     },
+//     {
+//         number: '十五',       
+//     },
+//     {
+//         number: '十六',        
+//     },
+//     {
+//         number: '十七',        
+//     },
+//     {
+//         number: '十八',        
+//     },
+//     {
+//         number: '十九',        
+//     },
+//     {
+//         number: '二十',        
+//     },
+//     {
+//         number: '二十一',        
+//     },
+//     {
+//         number: '二十二',        
+//     },
+//     {
+//         number: '二十三',        
+//     },
+//     {
+//         number: '二十四',        
+//     },
+//     {
+//         number: '二十五',        
+//     },
+// ]
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -254,13 +232,15 @@ for(let i = 0; i < 16; i++) {
     let gameCell = document.createElement('div');
     gameCell.classList.add('game_cell');
     fieldCells.appendChild(gameCell);
+
+    const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
+    '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五'];
+    let cellNumber = document.createElement('div');    
+    cellNumber.classList.add('cell_number');
+    gameCell.appendChild(cellNumber);
+    numbers.forEach((number) => cellNumber.innerText = number);
 }
 gameField.appendChild(fieldCells);
-
-// const cells = new Array(16).fill(0).map((item, index) => index + 1);
-// cells.forEach((item, index) => {
-//     div.item = vlaue;
-// })
 
 let bottomButtonsContainer = document.createElement('div');
 bottomButtonsContainer.classList.add('bottom_buttons_container');
