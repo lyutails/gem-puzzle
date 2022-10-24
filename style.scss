@@ -31,6 +31,7 @@ $dark_light: #fff714;
 $light_light: #14ffc5;
 $dark_background: #1c191a;
 $numbers_night_theme: #e9cccc;
+$numbers_light_theme_hover: #fffccd;
 
 
 .main_wrapper {
@@ -281,36 +282,45 @@ $numbers_night_theme: #e9cccc;
         width: 24%;
         height: 24%;
         position: relative;
-        background-color: none;
-        //opacity:  0.4;        
+        background-color: none;          
         transition: all 0.4s ease-in-out;
         z-index: 80;
-        border: 2px solid $main;
+        border: 2px solid rgba(216, 26, 70, 0.4);
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-content: center;
-        //box-sizing: border-box;
-
+        align-items: center;
+       
         &:hover {
             cursor: pointer;
             box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
-            background-color: rgba(216, 26, 70, 0.4);;           
+            background-color: rgba(216, 26, 70, 0.4);
+            border: transparent;          
         }        
     }
 }
 
 .cell_number {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
     font-family: "Yuji Boku";
     font-size: 30px;
-    color: $dark_background;
-    display: inline-block;
+    color: $dark_background;    
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
     user-select: none;
     opacity: rgba(216, 26, 70, 1);
+    transition: all 0.4 ease-in-out;
+}
+
+.cell_number:hover {    
+    text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
+    transition: all 0.4 ease-in-out;  
 }
 
 .bottom_buttons_container {
