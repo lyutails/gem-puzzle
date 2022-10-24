@@ -308,6 +308,10 @@ function printGame(number) {
     const myMatrix = getMatrixFromArray(numbers, number);
     placeCells(myMatrix, [...gameField.childNodes]);
     console.log([...gameField.childNodes]);
+
+    buttonNew.addEventListener('click', function(n) {
+        printGame(number);
+    })
 }
 
 function placeCells (matrix, cells) {
@@ -321,6 +325,7 @@ function placeCells (matrix, cells) {
     }
 }
 
+// на геймфилд повесить слушатель, брать клетку, брать котика - смотреть можно ли их переставить и заново считать плейcселлс
 
 function shuffle(numbers) {
     for (let i = numbers.length - 1; i > 0; i--) {
@@ -372,6 +377,3 @@ function getMatrixFromArray(numbers, currentFrame) {
     }
     return matrix
 }
-
-
-
