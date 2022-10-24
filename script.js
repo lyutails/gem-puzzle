@@ -5,6 +5,8 @@ let fieldSize = 4;
 let isSound = true;
 let saveMatrix = [];
 let isDark = false;
+let newShuffle = new Audio('./refs/sound/shuffle_chimes.wav');
+let chimeStep = new Audio('./refs/sound/move_150_bell_tree_loop.wav');
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -42,7 +44,11 @@ dropDownMenu.style.textAlign = 'center';
 
 menuItemOne.addEventListener('click', function (a) {
     menuTextSelected.nodeValue = '3x3';
-    printGame(3);
+    printGame(3);   
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 let menuItemTwo = document.createElement('li');
@@ -55,6 +61,10 @@ dropDownMenu.style.textAlign = 'center';
 menuItemTwo.addEventListener('click', function (c) {
     menuTextSelected.nodeValue = '4x4';
     printGame(4);
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 let menuItemThree = document.createElement('li');
@@ -67,6 +77,10 @@ dropDownMenu.style.textAlign = 'center';
 menuItemThree.addEventListener('click', function (d) {
     menuTextSelected.nodeValue = '5x5';
     printGame(5);
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 let menuItemFour = document.createElement('li');
@@ -79,6 +93,10 @@ dropDownMenu.style.textAlign = 'center';
 menuItemFour.addEventListener('click', function (f) {
     menuTextSelected.nodeValue = '6x6';
     printGame(6);
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 let menuItemFive = document.createElement('li');
@@ -91,6 +109,10 @@ dropDownMenu.style.textAlign = 'center';
 menuItemFive.addEventListener('click', function (g) {
     menuTextSelected.nodeValue = '7x7';
     printGame(7);
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 let menuItemSix = document.createElement('li');
@@ -103,6 +125,10 @@ dropDownMenu.style.textAlign = 'center';
 menuItemSix.addEventListener('click', function (h) {
     menuTextSelected.nodeValue = '8x8';
     printGame(8);
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 dropDownMenu.addEventListener('click', function (e) {
@@ -232,6 +258,9 @@ buttonSound.classList.add('button_sound');
 symbolButtonsContainer.appendChild(buttonSound);
 buttonSound.addEventListener('click', function (l) {
     buttonSound.classList.toggle('active');
+    isSound = !isSound;
+    chimeStep.pause();
+    newShuffle.pause();
 })
 
 let lyutailsButton = document.createElement('a');
@@ -306,9 +335,7 @@ function printGame(number) {
         }
         gameCell.style.fontSize = `${fS[number]}`;
         gameCell.appendChild(cellNumber);
-        numbers.forEach(() => cellNumber.innerText = winResult[i]);
-
-        //gameCell.style.transition = 'all 2s';
+        numbers.forEach(() => cellNumber.innerText = winResult[i]);        
 
         if (winResult[i] === number * number) {
             gameCell.firstElementChild.style.fontSize = '0';
@@ -336,11 +363,19 @@ gameField.addEventListener('click', (event) => {
         if(checkWin(myMatrix, winResult) === true) {
             alert('console.lox()');
         };
+        if(isSound) {
+            chimeStep.currentTime = 0;
+            chimeStep.play();
+        };                
     }        
 })
 
 buttonNew.addEventListener('click', function (n) {
-    printGame(fieldSize);
+    printGame(fieldSize);    
+    if(isSound) {
+        newShuffle.currentTime = 0;
+        newShuffle.play();
+    };
 })
 
 function placeCells(matrix, cells) {
@@ -433,4 +468,29 @@ function replaceCells(coords1, coords2, matrix) {
 
 function checkWin(matrix, winArray) {    
     return matrix.flat().join('') === winArray.join('');    
+}
+
+let inputMoves = document.createElement('div');
+inputMoves.classList.add('input_moves');
+mainWrapper.appendChild(inputMoves);
+inputMoves.style.textAlign = 'center';
+inputMoves.innerHTML = '1234';
+
+let clicks = 0;
+function countClicks() {
+    gameCell('clicked').value = ++clicks;
+    inputMoves.innerHTML = '';
+    inputMoves.nodeValue = ++clicks;
+}
+
+let inputTime = document.createElement('div');
+inputTime.classList.add('input_time');
+mainWrapper.appendChild(inputTime);
+inputTime.style.textAlign = 'center';
+inputTime.innerHTML = '00:00:00';
+
+gameCell.setAttribute('draggable', true);
+gameCell.ongragover = allowDrop;
+function allowDrop(event) {
+    event.preventDefault();
 }

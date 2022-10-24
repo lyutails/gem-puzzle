@@ -262,7 +262,7 @@ $numbers_light_theme_hover: #fffccd;
     font-family: 'Graffiti';
     font-size: 22px;
     color: $main;
-    transform: translate(580px, -1330px);
+    transform: translate(560px, -1330px);
     position: absolute;
     user-select: none;
 }
@@ -331,7 +331,23 @@ $numbers_light_theme_hover: #fffccd;
     }
 }
 
+.input_moves {
+    width: 100px;
+    height: 40px;
+    font-family: 'Graffiti';
+    font-size: 24px;
+    color: $main;
+    transform: translate(380px, -2094px);
+}
 
+.input_time {
+    width: 100px;
+    height: 40px;
+    font-family: 'Graffiti';
+    font-size: 24px;
+    color: $main;
+    transform: translate(630px, -2134px);
+}
 
 .bottom_buttons_container {
     width: 480px;
