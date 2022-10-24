@@ -22,7 +22,7 @@ upButtonsFlex.appendChild(dropDownMenu);
 let menuItemSelected = document.createElement('li');
 menuItemSelected.classList.add('menu_item');
 dropDownMenu.appendChild(menuItemSelected);
-let menuTextSelected = document.createTextNode('3x3');
+let menuTextSelected = document.createTextNode('4x4');
 menuItemSelected.appendChild(menuTextSelected);
 dropDownMenu.style.textAlign = 'center';
 
@@ -33,8 +33,9 @@ let menuTextOne = document.createTextNode('3x3');
 menuItemOne.appendChild(menuTextOne);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemOne.addEventListener('click', function(a) {
+menuItemOne.addEventListener('click', function (a) {
     menuTextSelected.nodeValue = '3x3';
+    printGame(3);
 })
 
 let menuItemTwo = document.createElement('li');
@@ -44,8 +45,9 @@ let menuTextTwo = document.createTextNode('4x4');
 menuItemTwo.appendChild(menuTextTwo);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemTwo.addEventListener('click', function(c) {
+menuItemTwo.addEventListener('click', function (c) {
     menuTextSelected.nodeValue = '4x4';
+    printGame(4);
 })
 
 let menuItemThree = document.createElement('li');
@@ -55,8 +57,9 @@ let menuTextThree = document.createTextNode('5x5');
 menuItemThree.appendChild(menuTextThree);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemThree.addEventListener('click', function(d) {
+menuItemThree.addEventListener('click', function (d) {
     menuTextSelected.nodeValue = '5x5';
+    printGame(5);
 })
 
 let menuItemFour = document.createElement('li');
@@ -66,8 +69,9 @@ let menuTextFour = document.createTextNode('6x6');
 menuItemFour.appendChild(menuTextFour);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemFour.addEventListener('click', function(f) {
+menuItemFour.addEventListener('click', function (f) {
     menuTextSelected.nodeValue = '6x6';
+    printGame(6);
 })
 
 let menuItemFive = document.createElement('li');
@@ -77,8 +81,9 @@ let menuTextFive = document.createTextNode('7x7');
 menuItemFive.appendChild(menuTextFive);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemFive.addEventListener('click', function(g) {
+menuItemFive.addEventListener('click', function (g) {
     menuTextSelected.nodeValue = '7x7';
+    printGame(7);
 })
 
 let menuItemSix = document.createElement('li');
@@ -88,15 +93,16 @@ let menuTextEight = document.createTextNode('8x8');
 menuItemSix.appendChild(menuTextEight);
 dropDownMenu.style.textAlign = 'center';
 
-menuItemSix.addEventListener('click', function(h) {
+menuItemSix.addEventListener('click', function (h) {
     menuTextSelected.nodeValue = '8x8';
+    printGame(8);
 })
 
-dropDownMenu.addEventListener('click', function(e) {
+dropDownMenu.addEventListener('click', function (e) {
     dropDownMenu.classList.toggle('active');
 });
 
-dropDownMenu.addEventListener('mouseleave', function(b) {
+dropDownMenu.addEventListener('mouseleave', function (b) {
     dropDownMenu.classList.add('active');
 });
 
@@ -149,62 +155,7 @@ let gameField = document.createElement('div');
 gameField.classList.add('game_field');
 mainWrapper.appendChild(gameField);
 
-let fieldCells = document.createDocumentFragment();
-for(let i = 0; i < 16; i++) {
-    let gameCell = document.createElement('div');
-    gameCell.classList.add('game_cell');
-    fieldCells.appendChild(gameCell);
-
-    const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
-    '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
-    '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
-    , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
-    , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
-    , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];
-
-    let cellNumber = document.createElement('div');    
-    cellNumber.classList.add('cell_number');
-    gameCell.appendChild(cellNumber);
-    numbers.forEach(() => cellNumber.innerText = numbers[i]);
-    // if(numbers[i = 16]) {
-    //     cellNumber.innetText = '';
-    // }
-    
-    buttonNew.addEventListener('click', (q) => {                   
-        shuffle(numbers).map(el => gameCell);               
-    })
-
-    function shuffle(numbers) {
-        let currentIndex = numbers.length, randomIndex;
-      
-        // While there remain elements to shuffle.
-        while (currentIndex != 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [numbers[currentIndex], numbers[randomIndex]] = [
-            numbers[randomIndex], numbers[currentIndex]];
-        }
-      
-        return array.slice(0, 6);
-      }
-
-    //   function init() {
-    //     sliderCards.style.transition='none';
-    //     sliderCards.innerHTML = '';   
-    //     const slides1 = shuffle(dataAnimals).map(el => generateCard(el));
-    //     const slides2 = shuffle(dataAnimals).map(el => generateCard(el));
-    //     const slides3 = shuffle(dataAnimals).map(el => generateCard(el));
-    //     sliderCards.append(...slides1, ...slides2, ...slides3);  
-    //     sliderCards.style.transition=''; 
-    //   }
-      
-    //   init ();   
-}
-gameField.appendChild(fieldCells);
+printGame(4);
 
 let bottomButtonsContainer = document.createElement('div');
 bottomButtonsContainer.classList.add('bottom_buttons_container');
@@ -219,7 +170,7 @@ bottomButtonsContainer.appendChild(rsschoolButton);
 rsschoolButton.classList.add('rsschool_button');
 rsschoolButton.setAttribute('class', 'rsschool_content');
 rsschoolButton.innerHTML = 'RS School';
-rsschoolButton.style.textDecoration = 'none'; 
+rsschoolButton.style.textDecoration = 'none';
 
 let symbolButtonsContainer = document.createElement('div');
 symbolButtonsContainer.classList.add('symbol_buttons');
@@ -235,7 +186,7 @@ symbolButtonsContainer.appendChild(buttonDark);
 
 const colorNumbers = Array.from(gameField.childNodes);
 buttonDark.classList.toggle('active');
-buttonDark.addEventListener('click', function(j) {
+buttonDark.addEventListener('click', function (j) {
     let darkTheme = document.body;
     darkTheme.classList.add('active');
     dragon.classList.add('active');
@@ -244,14 +195,14 @@ buttonDark.addEventListener('click', function(j) {
     lightLightOne.classList.add('active');
     lightLightTwo.classList.add('active');
     lightLightThree.classList.add('active');
-    lightLightFour.classList.add('active');     
+    lightLightFour.classList.add('active');
     colorNumbers.forEach((element) => {
         element.classList.add('active');
-    });    
+    });
 })
 
 buttonLight.classList.toggle('active');
-buttonLight.addEventListener('click', function(k) {
+buttonLight.addEventListener('click', function (k) {
     let darkTheme = document.body;
     darkTheme.classList.remove('active');
     dragon.classList.remove('active');
@@ -260,16 +211,16 @@ buttonLight.addEventListener('click', function(k) {
     lightLightOne.classList.remove('active');
     lightLightTwo.classList.remove('active');
     lightLightThree.classList.remove('active');
-    lightLightFour.classList.remove('active');    
+    lightLightFour.classList.remove('active');
     colorNumbers.forEach((element) => {
         element.classList.remove('active');
-    });       
+    });
 })
 
 let buttonSound = document.createElement('div');
 buttonSound.classList.add('button_sound');
 symbolButtonsContainer.appendChild(buttonSound);
-buttonSound.addEventListener('click', function(l) {
+buttonSound.addEventListener('click', function (l) {
     buttonSound.classList.toggle('active');
 })
 
@@ -302,6 +253,93 @@ let lightLightFour = document.createElement('div');
 lightLightFour.classList.add('moving_light_4');
 lanternLight.appendChild(lightLightFour);
 
-const nekoManeki = colorNumbers.at(-1);
-nekoManeki.firstElementChild.style.fontSize = '0';
-nekoManeki.style.backgroundImage = "url('./refs/neko_2.png')";
+function printGame(number) {
+    gameField.innerHTML = '';
+    let fieldCells = document.createDocumentFragment();
+    let numbers = shuffle([...new Array(number * number).fill(0).map((item, ind) => item = ind + 1)]);
+    while (!ifCanBeSolved(numbers)) {
+        numbers = shuffle([...new Array(number * number).fill(0).map((item, ind) => item = ind + 1)]);
+    }
+    for (let i = 0; i < number * number; i++) {
+        let gameCell = document.createElement('div');
+        gameCell.classList.add('game_cell');
+        fieldCells.appendChild(gameCell);
+        
+        // const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
+        // '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
+        // '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
+        // , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
+        // , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
+        // , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];
+
+        //const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];    
+
+        let cellNumber = document.createElement('div');
+        cellNumber.classList.add('cell_number');
+        gameCell.style.width = `${100 / number}%`;
+        gameCell.style.height = `${100 / number}%`;
+        gameCell.appendChild(cellNumber);
+        numbers.forEach(() => cellNumber.innerText = numbers[i]);
+        
+        if (numbers[i] === number * number) {            
+            gameCell.firstElementChild.style.fontSize = '0';
+            gameCell.style.backgroundImage = "url('./refs/neko_2.png')";
+            gameCell.style.backgroundSize = '100%';
+        }
+    }
+    gameField.appendChild(fieldCells);    
+}
+
+function shuffle(numbers) {
+    for (let i = numbers.length - 1; i > 0; i--) {
+        let randomNumber = Math.floor(Math.random() * (i + 1));
+        let currentnumber = numbers[i];
+        numbers[i] = numbers[randomNumber];
+        numbers[randomNumber] = currentnumber;
+    }
+    return numbers;
+};
+
+function ifCanBeSolved(numbers) {
+    let count = 0;
+    const arrayWithoutLast = numbers.filter((element) => element !== numbers.length);
+    for (let i = 0; i < arrayWithoutLast.length; i++) {
+        arrayWithoutLast.forEach((element, index) => {
+            if (element < arrayWithoutLast[i] && index > i) {
+                count++;
+            }
+        });        
+    }
+    const matrix = getMatrixFromArray(numbers, Math.sqrt(numbers.length));
+    const nekoManeki =
+        matrix.indexOf(
+            matrix.filter((element) => element.includes(numbers.length))[0]
+        ) + 1;
+    if (numbers.length % 2 === 1) {
+        return count % 2 === 0;
+    } else {
+        count += nekoManeki;
+        return count % 2 === 0;
+    }
+};
+
+function getMatrixFromArray(numbers, currentFrame) {
+    let matrix = [];
+    for (let i = 0; i < currentFrame; i++) {
+        matrix.push([]);
+    }
+    let y = 0;
+    let x = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (x >= currentFrame) {
+            y++;
+            x = 0;
+        }
+        matrix[y][x] = numbers[i];
+        x++;
+    }
+    return matrix
+}
+
+
+
