@@ -319,7 +319,7 @@
 }
 
 .cell_number {
-  width: 100%;
+  width: 40%;
   height: 100%;
   font-family: "Yuji Boku";
   font-size: 30px;
@@ -342,6 +342,10 @@
 .cell_number:hover {
   text-shadow: 0 0 50px #fff714, 0 0 30px #fff714, 0 0 10px #fff714;
   transition: all 0.4 ease-in-out;
+}
+
+.cell_number.active {
+  color: #e9cccc;
 }
 
 .bottom_buttons_container {

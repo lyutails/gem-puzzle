@@ -1,82 +1,4 @@
 
-// const numbers = [
-//     {
-//         number: '一',        
-//     },
-//     {
-//         number: '二',        
-//     },
-//     {
-//         number: '三',        
-//     },
-//     {
-//         number: '四',        
-//     },
-//     {
-//         number: '五',        
-//     },
-//     {
-//         number: '六',        
-//     },
-//     {
-//         number: '七',        
-//     },
-//     {
-//         number: '八',       
-//     },
-//     {
-//         number: '九',        
-//     },
-//     {
-//         number: '十',        
-//     },
-//     {
-//         number: '十一',        
-//     },
-//     {
-//         number: '十二',        
-//     },
-//     {
-//         number: '十三',        
-//     },
-//     {
-//         number: '十四',        
-//     },
-//     {
-//         number: '十五',       
-//     },
-//     {
-//         number: '十六',        
-//     },
-//     {
-//         number: '十七',        
-//     },
-//     {
-//         number: '十八',        
-//     },
-//     {
-//         number: '十九',        
-//     },
-//     {
-//         number: '二十',        
-//     },
-//     {
-//         number: '二十一',        
-//     },
-//     {
-//         number: '二十二',        
-//     },
-//     {
-//         number: '二十三',        
-//     },
-//     {
-//         number: '二十四',        
-//     },
-//     {
-//         number: '二十五',        
-//     },
-// ]
-
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
 document.body.appendChild(mainWrapper);
@@ -233,7 +155,7 @@ for(let i = 0; i < 16; i++) {
     gameCell.classList.add('game_cell');
     fieldCells.appendChild(gameCell);
 
-const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
+    const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
     '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
     '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
     , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
@@ -243,7 +165,41 @@ const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', 
     let cellNumber = document.createElement('div');    
     cellNumber.classList.add('cell_number');
     gameCell.appendChild(cellNumber);
-    numbers.forEach((number) => cellNumber.innerText = numbers[i]);
+    numbers.forEach(() => cellNumber.innerText = numbers[i]);
+
+    buttonNew.addEventListener('click', (q) => {                   
+        shuffle(numbers).map(el => gameCell);               
+    })
+
+    function shuffle(numbers) {
+        let currentIndex = numbers.length, randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [numbers[currentIndex], numbers[randomIndex]] = [
+            numbers[randomIndex], numbers[currentIndex]];
+        }
+      
+        return array.slice(0, 6);
+      }
+
+    //   function init() {
+    //     sliderCards.style.transition='none';
+    //     sliderCards.innerHTML = '';   
+    //     const slides1 = shuffle(dataAnimals).map(el => generateCard(el));
+    //     const slides2 = shuffle(dataAnimals).map(el => generateCard(el));
+    //     const slides3 = shuffle(dataAnimals).map(el => generateCard(el));
+    //     sliderCards.append(...slides1, ...slides2, ...slides3);  
+    //     sliderCards.style.transition=''; 
+    //   }
+      
+    //   init ();
 }
 gameField.appendChild(fieldCells);
 
@@ -284,7 +240,7 @@ buttonDark.addEventListener('click', function(j) {
     lightLightOne.classList.add('active');
     lightLightTwo.classList.add('active');
     lightLightThree.classList.add('active');
-    lightLightFour.classList.add('active');
+    lightLightFour.classList.add('active');    
 })
 
 buttonLight.classList.toggle('active');
@@ -297,7 +253,7 @@ buttonLight.addEventListener('click', function(k) {
     lightLightOne.classList.remove('active');
     lightLightTwo.classList.remove('active');
     lightLightThree.classList.remove('active');
-    lightLightFour.classList.remove('active');
+    lightLightFour.classList.remove('active');    
 })
 
 let buttonSound = document.createElement('div');
