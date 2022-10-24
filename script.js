@@ -1,3 +1,9 @@
+let winResult = [];
+let steps = 0;
+let gameTime = 0;
+let fieldSize = 4;
+let isSound = true;
+let saveMatrix = [];
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -184,7 +190,6 @@ let buttonDark = document.createElement('div');
 buttonDark.classList.add('button_dark');
 symbolButtonsContainer.appendChild(buttonDark);
 
-const colorNumbers = Array.from(gameField.childNodes);
 buttonDark.classList.toggle('active');
 buttonDark.addEventListener('click', function (j) {
     let darkTheme = document.body;
@@ -196,6 +201,7 @@ buttonDark.addEventListener('click', function (j) {
     lightLightTwo.classList.add('active');
     lightLightThree.classList.add('active');
     lightLightFour.classList.add('active');
+    const colorNumbers = Array.from(gameField.childNodes);
     colorNumbers.forEach((element) => {
         element.classList.add('active');
     });
@@ -212,6 +218,7 @@ buttonLight.addEventListener('click', function (k) {
     lightLightTwo.classList.remove('active');
     lightLightThree.classList.remove('active');
     lightLightFour.classList.remove('active');
+    const colorNumbers = Array.from(gameField.childNodes);
     colorNumbers.forEach((element) => {
         element.classList.remove('active');
     });
@@ -254,41 +261,66 @@ lightLightFour.classList.add('moving_light_4');
 lanternLight.appendChild(lightLightFour);
 
 function printGame(number) {
+    fieldSize = number;
     gameField.innerHTML = '';
     let fieldCells = document.createDocumentFragment();
+    winResult = [...new Array(number * number).fill(0).map((item, ind) => item = ind + 1)];
     let numbers = shuffle([...new Array(number * number).fill(0).map((item, ind) => item = ind + 1)]);
     while (!ifCanBeSolved(numbers)) {
         numbers = shuffle([...new Array(number * number).fill(0).map((item, ind) => item = ind + 1)]);
     }
+    saveMatrix = getMatrixFromArray(numbers, number);
     for (let i = 0; i < number * number; i++) {
         let gameCell = document.createElement('div');
         gameCell.classList.add('game_cell');
         fieldCells.appendChild(gameCell);
-        
-        // const numbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
-        // '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
-        // '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
-        // , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
-        // , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
-        // , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];
 
-        //const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];    
+        const japaneseNumbers = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二', '十三',
+        '十四', '十五', '十六', '十七', '十八', '十九', '二十', '二十一', '二十二', '二十三', '二十四', '二十五',
+        '二十六', '二十七', '二十八', '二十九', '三十', '三十一', '三十二', '三十三', '三十四', '三十五', '三十六'
+        , '三十七', '三十八', '三十九', '四十', '四十一', '四十二', '四十三', '四十四', '四十五', '四十六'
+        , '四十七', '四十八', '四十九', '五十', '五十一', '五十二', '五十三', '五十四', '五十五', '五十六'
+        , '五十七', '五十八', '五十九', '六十', '六十一', '六十二', '六十三', '六十四'];          
 
         let cellNumber = document.createElement('div');
         cellNumber.classList.add('cell_number');
         gameCell.style.width = `${100 / number}%`;
         gameCell.style.height = `${100 / number}%`;
+        const fS = {
+            3: '48px',
+            4: '32px',
+            5: '28px',
+            6: '24px',
+            7: '20px',
+            8: '16px',
+        }
+        gameCell.style.fontSize = `${fS[number]}`;
         gameCell.appendChild(cellNumber);
-        numbers.forEach(() => cellNumber.innerText = numbers[i]);
-        
-        if (numbers[i] === number * number) {            
+        numbers.forEach(() => cellNumber.innerText = winResult[i]);
+
+        if (winResult[i] === number * number) {
             gameCell.firstElementChild.style.fontSize = '0';
             gameCell.style.backgroundImage = "url('./refs/neko_2.png')";
             gameCell.style.backgroundSize = '100%';
         }
     }
-    gameField.appendChild(fieldCells);    
+    gameField.appendChild(fieldCells);
+    const myMatrix = getMatrixFromArray(numbers, number);
+    placeCells(myMatrix, [...gameField.childNodes]);
+    console.log([...gameField.childNodes]);
 }
+
+function placeCells (matrix, cells) {
+    const moveStep = 100;
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < matrix[y].length; x++) {
+            const value = matrix[y][x];
+            const cell = cells[value - 1];
+            cell.style.transform = `translate3D(${x * moveStep}%, ${y * moveStep}%, 0)`;
+        }
+    }
+}
+
 
 function shuffle(numbers) {
     for (let i = numbers.length - 1; i > 0; i--) {
@@ -308,7 +340,7 @@ function ifCanBeSolved(numbers) {
             if (element < arrayWithoutLast[i] && index > i) {
                 count++;
             }
-        });        
+        });
     }
     const matrix = getMatrixFromArray(numbers, Math.sqrt(numbers.length));
     const nekoManeki =
