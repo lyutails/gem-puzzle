@@ -317,8 +317,7 @@
   background-color: rgba(216, 26, 70, 0.4);
   border: transparent;
 }
-
-.cell_number {
+.game_field .cell_number {
   width: 40%;
   height: 100%;
   font-family: "Yuji Boku";
@@ -338,13 +337,11 @@
   opacity: rgb(216, 26, 70);
   transition: all 0.4 ease-in-out;
 }
-
-.cell_number:hover {
+.game_field .game_cell:hover .cell_number {
   text-shadow: 0 0 50px #fff714, 0 0 30px #fff714, 0 0 10px #fff714;
   transition: all 0.4 ease-in-out;
 }
-
-.cell_number.active {
+.game_field .active .cell_number {
   color: #e9cccc;
 }
 
