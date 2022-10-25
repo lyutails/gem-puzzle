@@ -281,7 +281,7 @@ $numbers_light_theme_hover: #fffccd;
     font-family: 'Graffiti';
     font-size: 22px;
     color: $main;
-    transform: translate(560px, -1330px);
+    transform: translate(600px, -1330px);
     position: absolute;
     user-select: none;
 }
@@ -356,8 +356,9 @@ $numbers_light_theme_hover: #fffccd;
     font-family: 'Graffiti';
     font-size: 24px;
     color: $main;
-    transform: translate(380px, -2094px);
+    transform: translate(380px, -2092px);
     position: absolute;
+    user-select: none;
 }
 
 .input_time {
@@ -366,7 +367,10 @@ $numbers_light_theme_hover: #fffccd;
     font-family: 'Graffiti';
     font-size: 24px;
     color: $main;
-    transform: translate(630px, -2134px);
+    transform: translate(630px, -2092px);
+    display: flex;
+    justify-content: flex-end;
+    user-select: none;
 }
 
 .bottom_buttons_container {
@@ -726,5 +730,1412 @@ body.active {
 
     to {
         transform: translate(0vw, 0vh);
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1279.9px) {
+    .main_wrapper {
+        width: 768px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    
+    .torii {
+        width: 539px;
+        height: 784px;
+        background-image: url('./refs/background_768.png');
+        margin: 0 auto;
+        z-index: 1;
+        background-repeat: no-repeat;
+    }
+    
+    .dragon {
+        width: 500px;
+        height: 675px;
+        background-image: url('./refs/japanese\ dragon\ light.png');
+        margin: 0 auto;
+        margin-top: 50px;
+        /* position: absolute; */
+        z-index: 10;
+        opacity: 0.4;
+        transform: translate(-20px, -730px);    
+    }
+    
+    .dragon.active {
+        width: 500px;
+        height: 675px;
+        background-image: url('./refs/japanese\ dragon\ dark.png');
+        margin: 0 auto;
+        margin-top: 50px;
+        /* position: absolute; */
+        z-index: 10;
+        opacity: 0.4;
+        transform: translate(-30px, -650px);    
+        background-repeat: no-repeat;
+    }
+    
+    .sakura_wrapper {
+        width: 500px;
+        height: 469px;
+        position: absolute;
+        transform: translate(100px, -1660px);
+    }
+    
+    .sakura_branch {
+        width: 500px;
+        height: 469px;
+        background-image: url('./refs/sakura_branch_resize.png');
+        z-index: 20;
+        position: relative;    
+        animation-name: sakura_anim;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;    
+        transform-origin: top right;
+    }
+    
+    .sakura_branch.active {    
+        background-image: url('./refs/sakura_branch_resize_dark.png');    
+    }
+    
+    @keyframes sakura_anim {
+        0% {
+            transform: rotateZ(-4deg);
+        }
+        25% {
+            transform: rotateZ(4deg);
+        }
+        50% {
+            transform: rotateZ(-4deg);
+        }
+        75% {
+            transform: rotateZ(4deg);
+        }
+        100% {
+            transform: rotateZ(-4deg);
+        }
+    }
+    
+    .lady_bug {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        z-index: 30;
+        background-image: url('./refs/ladybug_50.png');
+        position: relative;
+        transform: translate(180px, 310px);    
+    }
+    
+    .up_buttons_flex {
+        width: 450px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;    
+        z-index: 40;
+        position: relative;   
+        top: 0; 
+        transform: translate(140px, -1420px);
+    }
+    
+    .new_button, .pause_button, .results_button {
+        width: 90px;
+        height: 40px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 22px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;
+    }
+    
+    .new_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_1.jpg');
+    }
+    
+    .pause_button {
+        width: 90px;
+        height: 40px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 22px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;    
+    }
+    
+    .pause_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_2.jpg');
+    }
+    
+    .results_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_3.jpg');
+    }
+    
+    .new_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_1.jpg');
+    }
+    
+    .pause_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_2.jpg');
+    }
+    
+    .results_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_3.jpg');
+    }
+    
+    .drop_down_menu:hover {
+        cursor: pointer;
+        background-image: url('./refs/button_hover_4_full_size.jpg');    
+    }
+    
+    .drop_down_menu:active {
+        cursor: pointer;
+        background-image: url('./refs/button_hover_4_full_size.jpg');    
+    }
+    
+    .menu_item {
+        width: 90px;
+        height: 40px;
+        display: block;
+    }
+    
+    .menu_item:hover {
+        color: $hover;
+    }
+    
+    .menu_item:active {
+        color: $dark_background;
+    }
+    
+    .drop_down_menu {
+        width: 90px;
+        height: 280px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 22px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: flex-start; 
+        align-items: center;   
+        flex-wrap: nowrap;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;
+        list-style: none;
+        overflow: hidden;
+    }
+    
+    .drop_down_menu.active {    
+        height: 40px;
+    }
+    
+    .moves {
+        width: 150px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 22px;
+        color: $main;
+        transform: translate(150px, -1330px);
+        position: absolute;
+        user-select: none;
+    }
+    
+    .time {
+        width: 150px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 22px;
+        color: $main;
+        transform: translate(420px, -1330px);
+        position: absolute;
+        user-select: none;
+    }
+    
+    .game_field {
+        width: 100%;
+        max-width: 420px;
+        aspect-ratio: 1 / 1;
+        border: 5px solid $main;
+        position: relative;
+        transform: translate(150px, -1280px);
+        border-radius: 4px;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        // align-content: space-between;
+     
+        & .game_cell {
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            background-color: none;          
+            transition: all 0.4s ease-in-out;
+            z-index: 80;
+            border: 2px solid rgba(216, 26, 70, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+                background-color: rgba(216, 26, 70, 0.4);
+                border: transparent;          
+            }        
+        }
+    
+        .cell_number {
+            width: 40%;
+            height: 100%;
+            font-family: "Yuji Boku";
+            font-size: 1em;
+            color: $dark_background;    
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
+            user-select: none;
+            opacity: rgba(216, 26, 70, 1);
+            transition: all 0.4 ease-in-out;    
+        }
+        
+        .game_cell:hover .cell_number {    
+            text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
+            transition: all 0.4 ease-in-out;  
+        }
+        
+        .active {    
+            .cell_number {
+                color: $numbers_night_theme;
+            }
+        }
+    }
+    
+    .input_moves {
+        width: 100px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 24px;
+        color: $main;
+        transform: translate(220px, -2092px);
+        position: absolute;
+        user-select: none;
+    }
+    
+    .input_time {
+        width: 100px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 24px;
+        color: $main;
+        transform: translate(470px, -2092px);
+        display: flex;
+        justify-content: flex-end;
+        user-select: none;
+    }
+    
+    .bottom_buttons_container {
+        width: 480px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        transform: translate(130px, -1140px);
+        user-select: none; 
+    }
+    
+    .rsschool_button {
+        width: 150px;
+        height: 40px;
+        user-select: none;
+        text-decoration: none;
+    }
+    
+    .rsschool_content {
+        color: $main;
+        font-family: 'Myth';
+        font-size: 36px;
+        transition: all 0.4s ease-in-out;
+        text-decoration: none;
+    }
+    
+    .rsschool_content:hover {
+        color: $hover;    
+        cursor: pointer;
+    }
+    
+    .rsschool_content:active {
+        color: $active;    
+        cursor: pointer;
+    }
+    
+    .symbol_buttons {
+        width: 160px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;    
+    }
+    
+    .button_light {
+        width: 40px;
+        height: 40px;
+        background-image: url('./refs/icons/sun.png');
+        transition: all 0.4s ease-in-out;    
+        user-select: none;
+    }
+    
+    .button_light:hover {
+        background-image: url('./refs/icons/sun_hover.png');
+        cursor: pointer;
+    }
+    
+    .button_light:active {
+        background-image: url('./refs/icons/sun_active.png');
+        cursor: pointer;
+    }
+    
+    .button_dark {
+        width: 40px;
+        height: 40px;
+        background-image: url('./refs/icons/moon.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;    
+    }
+    
+    .button_dark:hover {
+        background-image: url('./refs/icons/moon_hover.png');
+        cursor: pointer;
+    }
+    
+    .button_dark:active {
+        background-image: url('./refs/icons/moon_active.png');
+        cursor: pointer;    
+    }
+    
+    .button_dark.active {    
+        cursor: pointer;    
+    }
+    
+    body.active {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: $dark_background;
+    }
+    
+    .button_sound {
+        width: 40px;
+        height: 40px;
+        background-image: url('./refs/icons/megafon_1.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;  
+    }
+    
+    .button_sound:hover {
+        background-image: url('./refs/icons/megafon_1_hover.png');
+        cursor: pointer;
+    }
+    
+    .button_sound:active {
+        background-image: url('./refs/icons/megafon_1_active.png');
+        cursor: pointer;
+    }
+    
+    .button_sound.active {
+        width: 40px;
+        height: 40px;
+        background-image: url('./refs/icons/megafon_1_no_sound.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;  
+    }
+    
+    .button_sound:hover.active {
+        background-image: url('./refs/icons/megafon_1_hover_no_sound.png');
+        cursor: pointer;
+    }
+    
+    .button_sound:active.active {
+        background-image: url('./refs/icons/megafon_1_active_no_sound.png');
+        cursor: pointer;
+    }
+    
+    .lyutails_button {
+        width: 150px;
+        height: 40px;
+        user-select: none;
+    }
+    
+    .lyutails_content {
+        color: $main;
+        font-family: 'Myth';
+        font-size: 36px;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .lyutails_content:hover {
+        color: $hover; 
+        cursor: pointer;   
+    }
+    
+    .lyutails_content:active {
+        color: $active; 
+        cursor: pointer;   
+    }
+    
+    .lantern_light {
+        width: 300px;
+        height: 300px;
+        background-image: url('./refs/stone_lantern_light_lighting.png');
+        transform: translate(210px, -1130px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //overflow: hidden;
+    }
+    
+    .lantern_light.active {    
+        background-image: url('./refs/stone_lantern_dark_lighting.png');    
+    }
+    
+    .moving_light_1 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_1.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_1;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 4s;
+        z-index: 50;
+    }
+    
+    .moving_light_1.active {    
+        background-image: url('./refs/moving_light_1.png');    
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light; 
+    }
+    
+    .moving_light_2 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_2.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_2;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 2s;
+        z-index: 50;
+    }
+    
+    .moving_light_2.active {    
+        background-image: url('./refs/moving_light_2.png');
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;     
+    }
+    
+    .moving_light_3 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_3.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_3;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        z-index: 50;
+    }
+    
+    .moving_light_3.active {    
+        background-image: url('./refs/moving_light_3.png'); 
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;    
+    }
+    
+    .moving_light_4 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_4.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_4;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 3s;
+        z-index: 50;
+    }
+    
+    .moving_light_4.active {    
+        background-image: url('./refs/moving_light_4.png');   
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;  
+    }
+    
+    @keyframes lights_light_anim_1 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(2vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-3vw, -4vh);
+        }
+    
+        75% {
+            transform: translate(5vw, -4vh);
+        }
+    
+        80% {
+            transform: translate(8vw, 3vh);
+        }
+    
+        90% {
+            transform: translate(-7vw, 7vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_2 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(1vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-4vw, -2vh);
+        }
+    
+        75% {
+            transform: translate(3vw, 1vh);
+        }
+    
+        80% {
+            transform: translate(6vw, 4vh);
+        }
+    
+        90% {
+            transform: translate(-5vw, 6vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_3 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(3vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-3vw, -3vh);
+        }
+    
+        75% {
+            transform: translate(2vw, 3vh);
+        }
+    
+        80% {
+            transform: translate(4vw, 6vh);
+        }
+    
+        90% {
+            transform: translate(-3vw, 4vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_4 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(1.5vw, -2vh);
+        }
+    
+        50% {
+            transform: translate(-4vw, 2vh);
+        }
+    
+        75% {
+            transform: translate(-3vw, -1vh);
+        }
+    
+        80% {
+            transform: translate(6vw, 4vh);
+        }
+    
+        90% {
+            transform: translate(-5vw, 6vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 767.9px) {
+    .main_wrapper {
+        width: 320px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    
+    .torii {
+        width: 300px;
+        height: 456px;
+        background-image: url('./refs/background_320_1.png');
+        margin: 0 auto;
+        z-index: 1;
+        background-repeat: no-repeat;
+    }
+    
+    .dragon {
+        width: 300px;
+        height: 405px;
+        background-image: url('./refs/japanese\ dragon\ light_320.png');
+        margin: 0 auto;
+        margin-top: 50px;
+        /* position: absolute; */
+        z-index: 10;
+        opacity: 0.4;
+        transform: translate(0px, -390px);   
+    }
+    
+    .dragon.active {
+        width: 300px;
+        height: 374px;
+        background-image: url('./refs/japanese\ dragon\ dark_320.png');
+        margin: 0 auto;
+        margin-top: 50px;
+        /* position: absolute; */
+        z-index: 10;
+        opacity: 0.4;
+        transform: translate(0px, -350px);    
+        background-repeat: no-repeat;
+    }
+    
+    .sakura_wrapper {
+        width: 300px;
+        height: 281px;
+        position: absolute;
+        transform: translate(10px, -1050px);
+    }
+    
+    .sakura_branch {
+        width: 300px;
+        height: 281px;
+        background-image: url('./refs/sakura_branch_resize_320.png');
+        z-index: 20;
+        position: relative;    
+        animation-name: sakura_anim;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;    
+        transform-origin: top right;
+    }
+    
+    .sakura_branch.active {    
+        background-image: url('./refs/sakura_branch_resize_dark.png');    
+    }
+    
+    @keyframes sakura_anim {
+        0% {
+            transform: rotateZ(-4deg);
+        }
+        25% {
+            transform: rotateZ(4deg);
+        }
+        50% {
+            transform: rotateZ(-4deg);
+        }
+        75% {
+            transform: rotateZ(4deg);
+        }
+        100% {
+            transform: rotateZ(-4deg);
+        }
+    }
+    
+    .lady_bug {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        z-index: 30;
+        background-image: url('./refs/ladybug_30.png');
+        position: relative;
+        transform: translate(100px, 185px);    
+    }
+    
+    .up_buttons_flex {
+        width: 300px;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;    
+        z-index: 40;
+        position: relative;   
+        top: 0; 
+        transform: translate(10px, -820px);
+    }
+    
+    .new_button, .pause_button, .results_button {
+        width: 50px;
+        height: 30px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 12px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;
+    }
+    
+    .new_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_1.jpg');
+    }
+    
+    .pause_button {
+        width: 50px;
+        height: 30px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 12px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;    
+    }
+    
+    .pause_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_2.jpg');
+    }
+    
+    .results_button:hover {
+        color: $hover;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_3.jpg');
+    }
+    
+    .new_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_1.jpg');
+    }
+    
+    .pause_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_2.jpg');
+    }
+    
+    .results_button:active {
+        color: $dark_background;
+        cursor: pointer;
+        background-image: url('./refs/button_hover_3.jpg');
+    }
+    
+    .drop_down_menu:hover {
+        cursor: pointer;
+        background-image: url('./refs/button_hover_4_full_size.jpg');    
+    }
+    
+    .drop_down_menu:active {
+        cursor: pointer;
+        background-image: url('./refs/button_hover_4_full_size.jpg');    
+    }
+    
+    .menu_item {
+        width: 50px;
+        height: 30px;
+        display: block;
+    }
+    
+    .menu_item:hover {
+        color: $hover;
+    }
+    
+    .menu_item:active {
+        color: $dark_background;
+    }
+    
+    .drop_down_menu {
+        width: 50px;
+        height: 180px;
+        background-color: transparent;
+        border: 5px solid $main;
+        border-radius: 4px;
+        box-sizing: border-box;    
+        font-family: 'Graffiti';
+        font-size: 15px;
+        color: $main;
+        padding-bottom: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: flex-start; 
+        align-items: center;   
+        flex-wrap: nowrap;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        background-image: none;
+        list-style: none;
+        overflow: hidden;
+    }
+    
+    .drop_down_menu.active {    
+        height: 30px;
+    }
+    
+    .moves {
+        width: 100px;
+        height: 30px;
+        font-family: 'Graffiti';
+        font-size: 15px;
+        color: $main;
+        transform: translate(10px, -810px);
+        position: absolute;
+        user-select: none;
+        z-index: 120;
+    }
+    
+    .time {
+        width: 100px;
+        height: 30px;
+        font-family: 'Graffiti';
+        font-size: 15px;
+        color: $main;
+        transform: translate(210px, -810px);
+        position: absolute;
+        user-select: none;
+        z-index: 120;
+    }
+    
+    .game_field {
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 1 / 1;
+        border: 5px solid $main;
+        position: relative;
+        transform: translate(5px, -780px);
+        border-radius: 4px;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        // align-content: space-between;
+     
+        & .game_cell {
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            background-color: none;          
+            transition: all 0.4s ease-in-out;
+            z-index: 80;
+            border: 2px solid rgba(216, 26, 70, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+                background-color: rgba(216, 26, 70, 0.4);
+                border: transparent;          
+            }        
+        }
+    
+        .cell_number {
+            width: 40%;
+            height: 100%;
+            font-family: "Yuji Boku";
+            font-size: 1em;
+            color: $dark_background;    
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-shadow: 0 0 50px $light_light, 0 0 30px $light_light, 0 0 10px $light_light;
+            user-select: none;
+            opacity: rgba(216, 26, 70, 1);
+            transition: all 0.4 ease-in-out;    
+        }
+        
+        .game_cell:hover .cell_number {    
+            text-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light, 0 0 10px $dark_light;  
+            transition: all 0.4 ease-in-out;  
+        }
+        
+        .active {    
+            .cell_number {
+                color: $numbers_night_theme;
+            }
+        }
+    }
+    
+    .input_moves {
+        width: 100px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 20px;
+        color: $main;
+        transform: translate(50px, -1455px);
+        position: absolute;
+        user-select: none;
+    }
+    
+    .input_time {
+        width: 100px;
+        height: 40px;
+        font-family: 'Graffiti';
+        font-size: 20px;
+        color: $main;
+        transform: translate(200px, -1455px);
+        display: flex;
+        justify-content: flex-end;
+        user-select: none;
+    }
+    
+    .bottom_buttons_container {
+        width: 300px;
+        height: 40px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        transform: translate(5px, -740px);
+        user-select: none; 
+    }
+    
+    .rsschool_button {
+        width: 100px;
+        height: 30px;
+        user-select: none;
+        text-decoration: none;
+    }
+    
+    .rsschool_content {
+        color: $main;
+        font-family: 'Myth';
+        font-size: 28px;
+        transition: all 0.4s ease-in-out;
+        text-decoration: none;
+    }
+    
+    .rsschool_content:hover {
+        color: $hover;    
+        cursor: pointer;
+    }
+    
+    .rsschool_content:active {
+        color: $active;    
+        cursor: pointer;
+    }
+    
+    .symbol_buttons {
+        width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;    
+    }
+    
+    .button_light {
+        width: 30px;
+        height: 30px;
+        background-image: url('./refs/icons/sun_320.png');
+        transition: all 0.4s ease-in-out;    
+        user-select: none;
+    }
+    
+    .button_light:hover {
+        background-image: url('./refs/icons/sun_hover_320.png');
+        cursor: pointer;
+    }
+    
+    .button_light:active {
+        background-image: url('./refs/icons/sun_active_320.png');
+        cursor: pointer;
+    }
+    
+    .button_dark {
+        width: 30px;
+        height: 30px;
+        background-image: url('./refs/icons/moon_320.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;    
+    }
+    
+    .button_dark:hover {
+        background-image: url('./refs/icons/moon_hover_320.png');
+        cursor: pointer;
+    }
+    
+    .button_dark:active {
+        background-image: url('./refs/icons/moon_active_320.png');
+        cursor: pointer;    
+    }
+    
+    .button_dark.active {    
+        cursor: pointer;    
+    }
+    
+    body.active {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: $dark_background;
+    }
+    
+    .button_sound {
+        width: 30px;
+        height: 30px;
+        background-image: url('./refs/icons/megafon_1_320.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;  
+    }
+    
+    .button_sound:hover {
+        background-image: url('./refs/icons/megafon_1_hover_320.png');
+        cursor: pointer;
+    }
+    
+    .button_sound:active {
+        background-image: url('./refs/icons/megafon_1_active_320.png');
+        cursor: pointer;
+    }
+    
+    .button_sound.active {
+        width: 40px;
+        height: 40px;
+        background-image: url('./refs/icons/megafon_1_no_sound_320.png');
+        transition: all 0.4s ease-in-out;
+        user-select: none;  
+    }
+    
+    .button_sound:hover.active {
+        background-image: url('./refs/icons/megafon_1_hover_no_sound_320.png');
+        cursor: pointer;
+    }
+    
+    .button_sound:active.active {
+        background-image: url('./refs/icons/megafon_1_active_no_sound_320.png');
+        cursor: pointer;
+    }
+    
+    .lyutails_button {
+        width: 100px;
+        height: 30px;
+        user-select: none;
+    }
+    
+    .lyutails_content {
+        color: $main;
+        font-family: 'Myth';
+        font-size: 28px;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    .lyutails_content:hover {
+        color: $hover; 
+        cursor: pointer;   
+    }
+    
+    .lyutails_content:active {
+        color: $active; 
+        cursor: pointer;   
+    }
+    
+    .lantern_light {
+        width: 300px;
+        height: 300px;
+        background-image: url('./refs/stone_lantern_light_lighting.png');
+        transform: translate(20px, -780px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //overflow: hidden;
+    }
+    
+    .lantern_light.active {    
+        background-image: url('./refs/stone_lantern_dark_lighting.png');    
+    }
+    
+    .moving_light_1 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_1.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_1;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 4s;
+        z-index: 50;
+    }
+    
+    .moving_light_1.active {    
+        background-image: url('./refs/moving_light_1.png');    
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light; 
+    }
+    
+    .moving_light_2 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_2.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_2;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 2s;
+        z-index: 50;
+    }
+    
+    .moving_light_2.active {    
+        background-image: url('./refs/moving_light_2.png');
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;     
+    }
+    
+    .moving_light_3 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_3.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_3;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        z-index: 50;
+    }
+    
+    .moving_light_3.active {    
+        background-image: url('./refs/moving_light_3.png'); 
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;    
+    }
+    
+    .moving_light_4 {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        background-image: url('./refs/moving_dark_4.png');    
+        box-shadow: 0 0 50px $light_light, 0 0 30px $light_light;
+        animation-name: lights_light_anim_4;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 3s;
+        z-index: 50;
+    }
+    
+    .moving_light_4.active {    
+        background-image: url('./refs/moving_light_4.png');   
+        box-shadow: 0 0 50px $dark_light, 0 0 30px $dark_light;  
+    }
+    
+    @keyframes lights_light_anim_1 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(2vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-3vw, -4vh);
+        }
+    
+        75% {
+            transform: translate(5vw, -4vh);
+        }
+    
+        80% {
+            transform: translate(8vw, 3vh);
+        }
+    
+        90% {
+            transform: translate(-7vw, 7vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_2 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(1vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-4vw, -2vh);
+        }
+    
+        75% {
+            transform: translate(3vw, 1vh);
+        }
+    
+        80% {
+            transform: translate(6vw, 4vh);
+        }
+    
+        90% {
+            transform: translate(-5vw, 6vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_3 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(3vw, 2vh);
+        }
+    
+        50% {
+            transform: translate(-3vw, -3vh);
+        }
+    
+        75% {
+            transform: translate(2vw, 3vh);
+        }
+    
+        80% {
+            transform: translate(4vw, 6vh);
+        }
+    
+        90% {
+            transform: translate(-3vw, 4vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
+    }
+    
+    @keyframes lights_light_anim_4 {
+        from {
+            transform: translate(0vw, 0vh);
+        }
+    
+        25% {
+            transform: translate(1.5vw, -2vh);
+        }
+    
+        50% {
+            transform: translate(-4vw, 2vh);
+        }
+    
+        75% {
+            transform: translate(-3vw, -1vh);
+        }
+    
+        80% {
+            transform: translate(6vw, 4vh);
+        }
+    
+        90% {
+            transform: translate(-5vw, 6vh);
+        }
+    
+        to {
+            transform: translate(0vw, 0vh);
+        }
     }
 }
