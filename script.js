@@ -371,7 +371,7 @@ gameField.addEventListener('click', (event) => {
         replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
         placeCells(myMatrix, [...gameField.childNodes]);
         if(checkWin(myMatrix, winResult) === true) {
-            alert('console.lox()');
+            alert('Hooray! You solved the puzzle in $time and $steps ^^');
         };
         if(isSound) {
             chimeStep.currentTime = 0;
@@ -499,8 +499,19 @@ mainWrapper.appendChild(inputTime);
 inputTime.style.textAlign = 'center';
 inputTime.innerHTML = '00:00:00';
 
+// drag and drop
+
 gameCell.setAttribute('draggable', true);
-gameCell.ongragover = allowDrop;
+nekoManeki.setAttribute('draggable', true);
+gameField.ongragover = allowDrop;
 function allowDrop(event) {
     event.preventDefault();
+}
+gameCell.ondragstart = drag;
+function drag(event) {
+    event.dataTransfer.setData('id', event.target.id);
+}
+gameCell.ondrop = drop;
+function drop (event) {
+    let itemId = event.dataTransfer.getData('id');    
 }
