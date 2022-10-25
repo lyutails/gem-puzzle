@@ -45,11 +45,13 @@ dropDownMenu.style.textAlign = 'center';
 
 menuItemOne.addEventListener('click', function (a) {
     menuTextSelected.nodeValue = '3x3';
-    printGame(3);   
-    if(isSound) {
+    printGame(3);
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 let menuItemTwo = document.createElement('li');
@@ -62,10 +64,12 @@ dropDownMenu.style.textAlign = 'center';
 menuItemTwo.addEventListener('click', function (c) {
     menuTextSelected.nodeValue = '4x4';
     printGame(4);
-    if(isSound) {
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 let menuItemThree = document.createElement('li');
@@ -78,10 +82,12 @@ dropDownMenu.style.textAlign = 'center';
 menuItemThree.addEventListener('click', function (d) {
     menuTextSelected.nodeValue = '5x5';
     printGame(5);
-    if(isSound) {
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 let menuItemFour = document.createElement('li');
@@ -94,10 +100,12 @@ dropDownMenu.style.textAlign = 'center';
 menuItemFour.addEventListener('click', function (f) {
     menuTextSelected.nodeValue = '6x6';
     printGame(6);
-    if(isSound) {
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 let menuItemFive = document.createElement('li');
@@ -110,10 +118,12 @@ dropDownMenu.style.textAlign = 'center';
 menuItemFive.addEventListener('click', function (g) {
     menuTextSelected.nodeValue = '7x7';
     printGame(7);
-    if(isSound) {
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 let menuItemSix = document.createElement('li');
@@ -126,10 +136,12 @@ dropDownMenu.style.textAlign = 'center';
 menuItemSix.addEventListener('click', function (h) {
     menuTextSelected.nodeValue = '8x8';
     printGame(8);
-    if(isSound) {
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 dropDownMenu.addEventListener('click', function (e) {
@@ -153,14 +165,16 @@ upButtonsFlex.appendChild(buttonPause);
 let pauseText = document.createTextNode('Pause');
 buttonPause.appendChild(pauseText);
 buttonPause.style.textAlign = 'center';
-buttonPause.addEventListener('click', function(y) {
+buttonPause.addEventListener('click', function (y) {
     isPause = !isPause;
-    if(isPause) {
+    if (isPause) {
         gameField.style.pointerEvents = 'none';
         pauseText.textContent = 'Play';
-    }    
-    else if(!isPause) {gameField.style.pointerEvents = 'all';
-    pauseText.textContent = 'Pause';}
+    }
+    else if (!isPause) {
+        gameField.style.pointerEvents = 'all';
+        pauseText.textContent = 'Pause';
+    }
 })
 
 let buttonTopResults = document.createElement('div');
@@ -242,7 +256,7 @@ buttonDark.addEventListener('click', function (j) {
     colorNumbers.forEach((element) => {
         element.classList.add('active');
     });
-    isDark=true;
+    isDark = true;
 })
 
 buttonLight.classList.toggle('active');
@@ -260,7 +274,7 @@ buttonLight.addEventListener('click', function (k) {
     colorNumbers.forEach((element) => {
         element.classList.remove('active');
     });
-    isDark=false;
+    isDark = false;
 })
 
 let buttonSound = document.createElement('div');
@@ -301,6 +315,12 @@ lanternLight.appendChild(lightLightThree);
 let lightLightFour = document.createElement('div');
 lightLightFour.classList.add('moving_light_4');
 lanternLight.appendChild(lightLightFour);
+
+let inputMoves = document.createElement('div');
+        inputMoves.classList.add('input_moves');
+        mainWrapper.appendChild(inputMoves);
+        inputMoves.style.textAlign = 'center';
+        inputMoves.innerHTML = '0';
 
 function printGame(number) {
     fieldSize = number;
@@ -345,17 +365,42 @@ function printGame(number) {
         }
         gameCell.style.fontSize = `${fS[number]}`;
         gameCell.appendChild(cellNumber);
-        numbers.forEach(() => cellNumber.innerText = winResult[i]);        
+        numbers.forEach(() => cellNumber.innerText = winResult[i]);
 
         if (winResult[i] === number * number) {
             gameCell.firstElementChild.style.fontSize = '0';
             gameCell.style.backgroundImage = "url('./refs/neko_2.png')";
             gameCell.style.backgroundSize = '100%';
         }
+
+        // drag and drop
+
+        gameCell.setAttribute('id', 'cell');
+        gameCell.setAttribute('draggable', true);
+        gameCell.draggable = true;
+        gameField.ondragover = allowDrop;
+        gameCell.ondragover = allowDrop;
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+        gameField.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        })
+        gameCell.ondragstart = drag;
+        function drag(event) {
+            event.dataTransfer.setData('id', event.target.id);
+        }
+        gameCell.ondrop = drop;
+        function drop(event) {
+            let itemId = event.dataTransfer.getData('id');
+            console.log(itemId);
+            event.target.append(gameCell);
+        }
     }
+
     gameField.appendChild(fieldCells);
     myMatrix = getMatrixFromArray(numbers, number);
-    placeCells(myMatrix, [...gameField.childNodes]);       
+    placeCells(myMatrix, [...gameField.childNodes]);
 }
 
 gameField.addEventListener('click', (event) => {
@@ -366,26 +411,35 @@ gameField.addEventListener('click', (event) => {
     const cellNode = +gameCell.dataset.matrixid;
     const cellCoordinates = findCoordinatesByNumber(cellNode, myMatrix);
     const emptyCellCoordinates = findCoordinatesByNumber(nekoManeki, myMatrix);
-    const isValid = isValidForSwap(cellCoordinates, emptyCellCoordinates);        
-    if(isValid === true) {
+    const isValid = isValidForSwap(cellCoordinates, emptyCellCoordinates);
+    if (isValid === true) {
         replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
         placeCells(myMatrix, [...gameField.childNodes]);
-        if(checkWin(myMatrix, winResult) === true) {
+        if (checkWin(myMatrix, winResult) === true) {
             alert('Hooray! You solved the puzzle in $time and $steps ^^');
         };
-        if(isSound) {
+        if (isSound) {
             chimeStep.currentTime = 0;
             chimeStep.play();
-        };                
-    }        
+        };
+        
+        // count moves          
+        steps++;            
+        inputMoves.innerHTML = steps;    
+        
+    }
 })
 
+// sound on new and shuffle on new
+
 buttonNew.addEventListener('click', function (n) {
-    printGame(fieldSize);    
-    if(isSound) {
+    printGame(fieldSize);
+    if (isSound) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    steps = 0;
+    inputMoves.innerHTML = '0';
 })
 
 function placeCells(matrix, cells) {
@@ -476,42 +530,26 @@ function replaceCells(coords1, coords2, matrix) {
     matrix[coords2.y][coords2.x] = currentPosition;
 }
 
-function checkWin(matrix, winArray) {    
-    return matrix.flat().join('') === winArray.join('');    
+function checkWin(matrix, winArray) {
+    return matrix.flat().join('') === winArray.join('');
 }
 
-let inputMoves = document.createElement('div');
-inputMoves.classList.add('input_moves');
-mainWrapper.appendChild(inputMoves);
-inputMoves.style.textAlign = 'center';
-inputMoves.innerHTML = '1234';
 
-let clicks = 0;
-function countClicks() {
-    gameCell('clicked').value = ++clicks;
-    inputMoves.innerHTML = '';
-    inputMoves.nodeValue = ++clicks;
-}
+//localStorage.clear();
 
-let inputTime = document.createElement('div');
-inputTime.classList.add('input_time');
-mainWrapper.appendChild(inputTime);
-inputTime.style.textAlign = 'center';
-inputTime.innerHTML = '00:00:00';
+// count time
 
-// drag and drop
+// let start = new Date().getTime();
+// for (i = 0; i < 5000; ++i) {
 
-gameCell.setAttribute('draggable', true);
-nekoManeki.setAttribute('draggable', true);
-gameField.ongragover = allowDrop;
-function allowDrop(event) {
-    event.preventDefault();
-}
-gameCell.ondragstart = drag;
-function drag(event) {
-    event.dataTransfer.setData('id', event.target.id);
-}
-gameCell.ondrop = drop;
-function drop (event) {
-    let itemId = event.dataTransfer.getData('id');    
-}
+// }
+// let end = new Date().getTime();
+// var time = end - start;
+
+// let inputTime = document.createElement('div');
+// inputTime.classList.add('input_time');
+// mainWrapper.appendChild(inputTime);
+// inputTime.style.textAlign = 'center';
+//inputTime.innerHTML = '00:00:00';
+
+
