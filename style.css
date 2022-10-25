@@ -868,7 +868,7 @@ body.active {
   .torii {
     width: 539px;
     height: 784px;
-    background-image: url("./refs/background_768.png");
+    background-image: url("./refs/background_768_1.png");
     margin: 0 auto;
     z-index: 1;
     background-repeat: no-repeat;
@@ -882,7 +882,7 @@ body.active {
     /* position: absolute; */
     z-index: 10;
     opacity: 0.4;
-    transform: translate(-20px, -730px);
+    transform: translate(-30px, -690px);
   }
   .dragon.active {
     width: 500px;
@@ -893,7 +893,7 @@ body.active {
     /* position: absolute; */
     z-index: 10;
     opacity: 0.4;
-    transform: translate(-30px, -650px);
+    transform: translate(-30px, -620px);
     background-repeat: no-repeat;
   }
   .sakura_wrapper {
@@ -1182,7 +1182,7 @@ body.active {
     font-family: "Graffiti";
     font-size: 24px;
     color: #d81a46;
-    transform: translate(220px, -2092px);
+    transform: translate(220px, -1942px);
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1195,7 +1195,7 @@ body.active {
     font-family: "Graffiti";
     font-size: 24px;
     color: #d81a46;
-    transform: translate(470px, -2092px);
+    transform: translate(470px, -1942px);
     display: flex;
     justify-content: flex-end;
     -webkit-user-select: none;
@@ -1350,16 +1350,16 @@ body.active {
     cursor: pointer;
   }
   .lantern_light {
-    width: 300px;
-    height: 300px;
-    background-image: url("./refs/stone_lantern_light_lighting.png");
-    transform: translate(210px, -1130px);
+    width: 150px;
+    height: 150px;
+    background-image: url("./refs/stone_lantern_light_lighting_320.png");
+    transform: translate(530px, -1330px);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .lantern_light.active {
-    background-image: url("./refs/stone_lantern_dark_lighting.png");
+    background-image: url("./refs/stone_lantern_dark_lighting_320.png");
   }
   .moving_light_1 {
     width: 10px;
@@ -1643,7 +1643,7 @@ body.active {
   .torii {
     width: 300px;
     height: 456px;
-    background-image: url("./refs/background_320_1.png");
+    background-image: url("./refs/background_320_2.png");
     margin: 0 auto;
     z-index: 1;
     background-repeat: no-repeat;
@@ -1656,8 +1656,8 @@ body.active {
     margin-top: 50px;
     /* position: absolute; */
     z-index: 10;
-    opacity: 0.4;
-    transform: translate(0px, -390px);
+    opacity: 0.6;
+    transform: translate(0px, -400px);
   }
   .dragon.active {
     width: 300px;
@@ -1667,8 +1667,8 @@ body.active {
     margin-top: 50px;
     /* position: absolute; */
     z-index: 10;
-    opacity: 0.4;
-    transform: translate(0px, -350px);
+    opacity: 0.6;
+    transform: translate(0px, -405px);
     background-repeat: no-repeat;
   }
   .sakura_wrapper {
@@ -1694,7 +1694,7 @@ body.active {
     transform-origin: top right;
   }
   .sakura_branch.active {
-    background-image: url("./refs/sakura_branch_resize_dark.png");
+    background-image: url("./refs/sakura_branch_resize_dark_320.png");
   }
   @-webkit-keyframes sakura_anim {
     0% {
@@ -1745,7 +1745,7 @@ body.active {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    z-index: 40;
+    z-index: 240;
     position: relative;
     top: 0;
     transform: translate(10px, -820px);
@@ -1866,6 +1866,7 @@ body.active {
     background-image: none;
     list-style: none;
     overflow: hidden;
+    z-index: 200;
   }
   .drop_down_menu.active {
     height: 30px;
@@ -1959,7 +1960,7 @@ body.active {
     font-family: "Graffiti";
     font-size: 20px;
     color: #d81a46;
-    transform: translate(50px, -1455px);
+    transform: translate(50px, -1305px);
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1972,7 +1973,7 @@ body.active {
     font-family: "Graffiti";
     font-size: 20px;
     color: #d81a46;
-    transform: translate(200px, -1455px);
+    transform: translate(200px, -1305px);
     display: flex;
     justify-content: flex-end;
     -webkit-user-select: none;
@@ -2127,16 +2128,17 @@ body.active {
     cursor: pointer;
   }
   .lantern_light {
-    width: 300px;
-    height: 300px;
-    background-image: url("./refs/stone_lantern_light_lighting.png");
-    transform: translate(20px, -780px);
+    width: 150px;
+    height: 150px;
+    background-image: url("./refs/stone_lantern_light_lighting_320.png");
+    transform: translate(80px, -740px);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
   }
   .lantern_light.active {
-    background-image: url("./refs/stone_lantern_dark_lighting.png");
+    background-image: url("./refs/stone_lantern_dark_lighting_320.png");
   }
   .moving_light_1 {
     width: 10px;
