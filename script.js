@@ -317,10 +317,16 @@ lightLightFour.classList.add('moving_light_4');
 lanternLight.appendChild(lightLightFour);
 
 let inputMoves = document.createElement('div');
-        inputMoves.classList.add('input_moves');
-        mainWrapper.appendChild(inputMoves);
-        inputMoves.style.textAlign = 'center';
-        inputMoves.innerHTML = '0';
+inputMoves.classList.add('input_moves');
+mainWrapper.appendChild(inputMoves);
+inputMoves.style.textAlign = 'center';
+inputMoves.innerHTML = '0';
+
+let inputTime = document.createElement('div');
+inputTime.classList.add('input_time');
+mainWrapper.appendChild(inputTime);
+inputTime.style.textAlign = 'center';
+inputTime.innerHTML = '0';
 
 function printGame(number) {
     fieldSize = number;
@@ -375,27 +381,27 @@ function printGame(number) {
 
         // drag and drop
 
-        gameCell.setAttribute('id', 'cell');
-        gameCell.setAttribute('draggable', true);
-        gameCell.draggable = true;
-        gameField.ondragover = allowDrop;
-        gameCell.ondragover = allowDrop;
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-        gameField.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        })
-        gameCell.ondragstart = drag;
-        function drag(event) {
-            event.dataTransfer.setData('id', event.target.id);
-        }
-        gameCell.ondrop = drop;
-        function drop(event) {
-            let itemId = event.dataTransfer.getData('id');
-            console.log(itemId);
-            event.target.append(gameCell);
-        }
+        // gameCell.setAttribute('id', 'cell');
+        // gameCell.setAttribute('draggable', true);
+        // gameCell.draggable = true;
+        // gameField.ondragover = allowDrop;
+        // gameCell.ondragover = allowDrop;
+        // function allowDrop(event) {
+        //     event.preventDefault();
+        // }
+        // gameField.addEventListener('dragover', (event) => {
+        //     event.preventDefault();
+        // })
+        // gameCell.ondragstart = drag;
+        // function drag(event) {
+        //     event.dataTransfer.setData('id', event.target.id);
+        // }
+        // gameCell.ondrop = drop;
+        // function drop(event) {
+        //     let itemId = event.dataTransfer.getData('id');
+        //     console.log(itemId);
+        //     event.target.append(gameCell);
+        // }
     }
 
     gameField.appendChild(fieldCells);
@@ -422,11 +428,10 @@ gameField.addEventListener('click', (event) => {
             chimeStep.currentTime = 0;
             chimeStep.play();
         };
-        
+
         // count moves          
-        steps++;            
-        inputMoves.innerHTML = steps;    
-        
+        steps++;
+        inputMoves.innerHTML = steps;
     }
 })
 
@@ -438,8 +443,16 @@ buttonNew.addEventListener('click', function (n) {
         newShuffle.currentTime = 0;
         newShuffle.play();
     };
+    // count moves 
     steps = 0;
     inputMoves.innerHTML = '0';
+    // count time
+    (function () {        
+        inputTime = setInterval(() => {
+            inputTime.innerHTML = '00:'+ gameTime;
+            gameTime++;
+        }, 1000)
+    })()
 })
 
 function placeCells(matrix, cells) {
@@ -533,23 +546,3 @@ function replaceCells(coords1, coords2, matrix) {
 function checkWin(matrix, winArray) {
     return matrix.flat().join('') === winArray.join('');
 }
-
-
-//localStorage.clear();
-
-// count time
-
-// let start = new Date().getTime();
-// for (i = 0; i < 5000; ++i) {
-
-// }
-// let end = new Date().getTime();
-// var time = end - start;
-
-// let inputTime = document.createElement('div');
-// inputTime.classList.add('input_time');
-// mainWrapper.appendChild(inputTime);
-// inputTime.style.textAlign = 'center';
-//inputTime.innerHTML = '00:00:00';
-
-
