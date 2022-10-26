@@ -8,6 +8,7 @@ let isDark = false;
 let newShuffle = new Audio('./refs/sound/shuffle_chimes.wav');
 let chimeStep = new Audio('./refs/sound/move_150_bell_tree_loop.wav');
 let isPause = false;
+let isTimer = false;
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -326,7 +327,17 @@ let inputTime = document.createElement('div');
 inputTime.classList.add('input_time');
 mainWrapper.appendChild(inputTime);
 inputTime.style.textAlign = 'center';
-inputTime.innerHTML = '0';
+inputTime.innerHTML = '';
+
+let secondsTime = document.createElement('div');
+secondsTime.classList.add('seconds');
+inputTime.appendChild(secondsTime);
+secondsTime.innerHTML = '00';
+
+let minutesTime = document.createElement('div');
+minutesTime.classList.add('minutes');
+inputTime.appendChild(minutesTime);
+minutesTime.innerHTML = '00';
 
 function printGame(number) {
     fieldSize = number;
@@ -446,14 +457,37 @@ buttonNew.addEventListener('click', function (n) {
     // count moves 
     steps = 0;
     inputMoves.innerHTML = '0';
+    
     // count time
-    (function () {        
-        inputTime = setInterval(() => {
-            inputTime.innerHTML = '00:'+ gameTime;
-            gameTime++;
-        }, 1000)
-    })()
+    let seconds = 00;
+    let minutes = 00;
+    let Interval;
+    let clear = clearInterval(Interval);
+    Interval = setInterval(startTime, 1000);
+    secondsTime.innerHTML = seconds;
+    minutesTime.innerHTML = minutes;
+    function startTime() {
+        seconds++;
+        minutes++;
+        if(minutes <= 9) {
+            minutesTime.innerHTML = paintTime(minutes);
+        }
+        if(minutes > 9) {
+            minutesTime.innerHTML = minutes;
+        }        
+        if(seconds >= 60) {
+            minutesTime.innerHTML = paintTime(minutes);
+            minutesTime.innerHTML = minutes;
+        }
+        if(seconds === 60) {
+            minutesTime.innerHTML = minutes;
+            secondsTime.innerHTML = '00';
+        }
+    }
 })
+function paintTime(countedTime) {
+    return countedTime.toString().padStart(2, 0);
+}
 
 function placeCells(matrix, cells) {
     const moveStep = 100;
