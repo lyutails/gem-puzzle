@@ -373,17 +373,17 @@ $numbers_light_theme_hover: #fffccd;
     user-select: none;
 }
 
-.seconds {
+.minutes {
     position: relative;
     display: inline-block;
-    width: 350px;
+    width: 35px;
     height: 40px;
     font-family: 'Graffiti';
     font-size: 24px;
     color: $main;    
 }
 
-.minutes {
+.seconds {
     position: relative;
     display: inline-block;
     width: 35px;
