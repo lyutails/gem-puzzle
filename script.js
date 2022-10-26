@@ -329,15 +329,17 @@ mainWrapper.appendChild(inputTime);
 inputTime.style.textAlign = 'center';
 inputTime.innerHTML = '';
 
-let secondsTime = document.createElement('div');
-secondsTime.classList.add('seconds');
-inputTime.appendChild(secondsTime);
-secondsTime.innerHTML = '00';
-
 let minutesTime = document.createElement('div');
 minutesTime.classList.add('minutes');
+minutesTime.setAttribute('id', 'minutes');
 inputTime.appendChild(minutesTime);
 minutesTime.innerHTML = '00';
+
+let secondsTime = document.createElement('div');
+secondsTime.classList.add('seconds');
+secondsTime.setAttribute('id', 'seconds');
+inputTime.appendChild(secondsTime);
+secondsTime.innerHTML = '00';
 
 function printGame(number) {
     fieldSize = number;
@@ -462,26 +464,27 @@ buttonNew.addEventListener('click', function (n) {
     let seconds = 00;
     let minutes = 00;
     let Interval;
-    let clear = clearInterval(Interval);
+    //clearInterval(Interval);
     Interval = setInterval(startTime, 1000);
     secondsTime.innerHTML = seconds;
     minutesTime.innerHTML = minutes;
     function startTime() {
-        seconds++;
-        minutes++;
+        seconds++;    
+        //minutes++;    
+        if(seconds <= 9) {
+            secondsTime.innerHTML = paintTime(seconds);
+        }
         if(minutes <= 9) {
             minutesTime.innerHTML = paintTime(minutes);
         }
-        if(minutes > 9) {
-            minutesTime.innerHTML = minutes;
-        }        
-        if(seconds >= 60) {
-            minutesTime.innerHTML = paintTime(minutes);
-            minutesTime.innerHTML = minutes;
-        }
+        if(seconds > 9) {
+            secondsTime.innerHTML = seconds;
+        }                 
         if(seconds === 60) {
-            minutesTime.innerHTML = minutes;
-            secondsTime.innerHTML = '00';
+            seconds = 0;
+            minutes++;
+            secondsTime.innerHTML = '00'; 
+            minutesTime.innerHTML = minutes;                       
         }
     }
 })
