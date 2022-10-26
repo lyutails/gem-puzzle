@@ -1,6 +1,7 @@
 let winResult = [];
 let steps = 0;
-let gameTime = 0;
+let minutes = 0;
+let seconds = 0;
 let fieldSize = 4;
 let isSound = true;
 let saveMatrix = [];
@@ -9,6 +10,7 @@ let newShuffle = new Audio('./refs/sound/shuffle_chimes.wav');
 let chimeStep = new Audio('./refs/sound/move_150_bell_tree_loop.wav');
 let isPause = false;
 let isTimer = false;
+let Interval;
 
 let mainWrapper = document.createElement('div');
 mainWrapper.classList.add('main_wrapper');
@@ -171,11 +173,13 @@ buttonPause.addEventListener('click', function (y) {
     if (isPause) {
         gameField.style.pointerEvents = 'none';
         pauseText.textContent = 'Play';
+        clearInterval(Interval);
     }
     else if (!isPause) {
         gameField.style.pointerEvents = 'all';
         pauseText.textContent = 'Pause';
-    }
+        playTime(minutes, seconds);        
+    }    
 })
 
 let buttonTopResults = document.createElement('div');
@@ -461,35 +465,37 @@ buttonNew.addEventListener('click', function (n) {
     inputMoves.innerHTML = '0';
     
     // count time
-    let seconds = 00;
-    let minutes = 00;
-    let Interval;
-    //clearInterval(Interval);
-    Interval = setInterval(startTime, 1000);
-    secondsTime.innerHTML = seconds;
-    minutesTime.innerHTML = minutes;
-    function startTime() {
-        seconds++;    
-        //minutes++;    
-        if(seconds <= 9) {
-            secondsTime.innerHTML = paintTime(seconds);
-        }
-        if(minutes <= 9) {
-            minutesTime.innerHTML = paintTime(minutes);
-        }
-        if(seconds > 9) {
-            secondsTime.innerHTML = seconds;
-        }                 
-        if(seconds === 60) {
-            seconds = 0;
-            minutes++;
-            secondsTime.innerHTML = '00'; 
-            minutesTime.innerHTML = minutes;                       
-        }
-    }
+    minutes = 0;
+    seconds = 0;
+    playTime(0, 0);
 })
 function paintTime(countedTime) {
     return countedTime.toString().padStart(2, 0);
+}
+function playTime(min, sec) {           
+    Interval = setInterval(startTime, 1000);
+    secondsTime.innerHTML = paintTime(sec);
+    minutesTime.innerHTML = paintTime(min);
+    function startTime() {
+        sec++; 
+        seconds++;             
+        if(sec <= 9) {
+            secondsTime.innerHTML = paintTime(sec);
+        }
+        if(min <= 9) {
+            minutesTime.innerHTML = paintTime(min);
+        }
+        if(sec > 9) {
+            secondsTime.innerHTML = sec;
+        }                 
+        if(sec === 60) {
+            sec = 0;
+            min++;
+            minutes++;
+            secondsTime.innerHTML = '00'; 
+            minutesTime.innerHTML = min;                       
+        }        
+    }
 }
 
 function placeCells(matrix, cells) {
