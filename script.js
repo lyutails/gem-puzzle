@@ -475,29 +475,19 @@ buttonNew.addEventListener('click', function (n) {
         if(minutes > 9) {
             minutesTime.innerHTML = minutes;
         }        
-        if(seconds > 9) {
-            secondsTime.innerHTML = paintTime(seconds);
+        if(seconds >= 60) {
+            minutesTime.innerHTML = paintTime(minutes);
+            minutesTime.innerHTML = minutes;
+        }
+        if(seconds === 60) {
+            minutesTime.innerHTML = minutes;
+            secondsTime.innerHTML = '00';
         }
     }
 })
 function paintTime(countedTime) {
     return countedTime.toString().padStart(2, 0);
 }
-
-// function startTimer() {
-//     if (!State.isStartTimer) {
-//         State.isStartTimer = setInterval(function () {
-//             timer.time += 1;
-//             const secondsValue = Math.floor(timer.time) - Math.floor(timer.time / 60);
-//             const minutesValue = Math.floor(timer.time / 60);
-//             printTime(secondsValue, minutesValue);
-//         }, 1000);
-//     }
-// }
-// function stopTimer() {
-//     clearInterval(State.isStartTimer);
-//     State.isStartTimer = null;
-// }
 
 function placeCells(matrix, cells) {
     const moveStep = 100;
