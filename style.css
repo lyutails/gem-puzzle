@@ -380,18 +380,38 @@
 }
 
 .input_time {
-  width: 100px;
+  width: 70px;
   height: 40px;
   font-family: "Graffiti";
   font-size: 24px;
   color: #d81a46;
-  transform: translate(630px, -2092px);
+  transform: translate(660px, -2092px);
   display: flex;
   justify-content: flex-end;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+.seconds {
+  position: relative;
+  display: inline-block;
+  width: 350px;
+  height: 40px;
+  font-family: "Graffiti";
+  font-size: 24px;
+  color: #d81a46;
+}
+
+.minutes {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 40px;
+  font-family: "Graffiti";
+  font-size: 24px;
+  color: #d81a46;
 }
 
 .bottom_buttons_container {
@@ -2088,8 +2108,8 @@ body.active {
     cursor: pointer;
   }
   .button_sound.active {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url("./refs/icons/megafon_1_no_sound_320.png");
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
