@@ -55,6 +55,8 @@ menuItemOne.addEventListener('click', function (a) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 let menuItemTwo = document.createElement('li');
@@ -73,6 +75,8 @@ menuItemTwo.addEventListener('click', function (c) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 let menuItemThree = document.createElement('li');
@@ -91,6 +95,8 @@ menuItemThree.addEventListener('click', function (d) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 let menuItemFour = document.createElement('li');
@@ -109,6 +115,8 @@ menuItemFour.addEventListener('click', function (f) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 let menuItemFive = document.createElement('li');
@@ -127,6 +135,8 @@ menuItemFive.addEventListener('click', function (g) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 let menuItemSix = document.createElement('li');
@@ -145,6 +155,8 @@ menuItemSix.addEventListener('click', function (h) {
     };
     steps = 0;
     inputMoves.innerHTML = '0';
+    clearInterval(Interval);
+    playTime(0, 0);
 })
 
 dropDownMenu.addEventListener('click', function (e) {
