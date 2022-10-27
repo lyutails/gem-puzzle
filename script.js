@@ -471,7 +471,11 @@ gameField.addEventListener('click', (event) => {
         placeCells(myMatrix, [...gameField.childNodes]);
         if (checkWin(myMatrix, winResult) === true) {
             createPopupWin();
-            playTime(0, 0);
+            // playTime(0, 0);
+            // clearInterval(Interval);
+            // Interval = null;
+            // minutes = 0;
+            // seconds = 0;
         };
         if (isSound) {
             chimeStep.currentTime = 0;
@@ -480,23 +484,25 @@ gameField.addEventListener('click', (event) => {
         // count moves          
         steps++;
         inputMoves.innerHTML = steps;
-    }    
-    gameCell.addEventListener('click', function() {
-        clearInterval(Interval);
-        Interval = null;
-        minutes = 0;
-        seconds = 0;
-        playTime(0, 0);
-    }, {once: true});
-    // gameCell.addEventListener('click', clickFunction);
-    // function clickFunction(e) {
+    } 
+
+    // gameCell.addEventListener('click', function() {
     //     clearInterval(Interval);
     //     Interval = null;
     //     minutes = 0;
     //     seconds = 0;
-    //     playTime(0, 0);
-    //     gameCell.removeEventListener('click', clickFunction);
-    // }    
+    //     playTime(0, 0);        
+    // }, {once: true});     
+
+    // function onceClicked() {
+    //     clearInterval(Interval);
+    //     Interval = null;
+    //     minutes = 0;
+    //     seconds = 0;
+    //     playTime(0, 0); 
+    //     removeEventListener('click', onceClicked);
+    // }
+    // addEventListener('click', onceClicked);
 })
 
 // popup win
@@ -506,14 +512,18 @@ const createPopupWin = () => {
     modalWindowWin.classList.add('modal_win');
     mainWrapper.appendChild(modalWindowWin);
 
+    let dragonWinUp = document.createElement('div');
+    dragonWinUp.classList.add('dragon_win_up');
+    modalWindowWin.appendChild(dragonWinUp);
+
     let modalTextWin = document.createElement('div');
     modalTextWin.classList.add('modal_text_win');
     modalWindowWin.appendChild(modalTextWin);
     modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} and ${steps} ^^`;
-
-    let dragonWin = document.createElement('div');
-    dragonWin.classList.add('dragon_win');
-    modalWindowWin.appendChild(dragonWin);
+   
+    let dragonWinDown = document.createElement('div');
+    dragonWinDown.classList.add('dragon_win_down');
+    modalWindowWin.appendChild(dragonWinDown);
 
     let cross = document.createElement('div');
     cross.classList.add('cross');
@@ -591,7 +601,8 @@ buttonTopResults.addEventListener('click', function (s) {
 
 // save data to local storage
 
-//localStorage.setItem(key, value);
+//localStorage.setItem(best_result, value);
+ 
 
 
 // sound on new and shuffle on new
