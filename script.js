@@ -209,8 +209,8 @@ buttonPause.addEventListener('click', function (y) {
     else if (!isPause) {
         gameField.style.pointerEvents = 'all';
         pauseText.textContent = 'Pause';
-        playTime(minutes, seconds);        
-    } 
+        playTime(minutes, seconds);
+    }
 })
 
 let buttonTopResults = document.createElement('div');
@@ -471,6 +471,7 @@ gameField.addEventListener('click', (event) => {
         placeCells(myMatrix, [...gameField.childNodes]);
         if (checkWin(myMatrix, winResult) === true) {
             createPopupWin();
+            playTime(0, 0);
         };
         if (isSound) {
             chimeStep.currentTime = 0;
@@ -479,7 +480,23 @@ gameField.addEventListener('click', (event) => {
         // count moves          
         steps++;
         inputMoves.innerHTML = steps;
-    }
+    }    
+    gameCell.addEventListener('click', function() {
+        clearInterval(Interval);
+        Interval = null;
+        minutes = 0;
+        seconds = 0;
+        playTime(0, 0);
+    }, {once: true});
+    // gameCell.addEventListener('click', clickFunction);
+    // function clickFunction(e) {
+    //     clearInterval(Interval);
+    //     Interval = null;
+    //     minutes = 0;
+    //     seconds = 0;
+    //     playTime(0, 0);
+    //     gameCell.removeEventListener('click', clickFunction);
+    // }    
 })
 
 // popup win
@@ -491,16 +508,16 @@ const createPopupWin = () => {
 
     let modalTextWin = document.createElement('div');
     modalTextWin.classList.add('modal_text_win');
-    modalWindow.appendChild(modalText);
-    modalTextWin.innerText = `Hooray! You solved the puzzle ${minutes}:${seconds} and ${steps} ^^`;
+    modalWindowWin.appendChild(modalTextWin);
+    modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} and ${steps} ^^`;
 
     let dragonWin = document.createElement('div');
     dragonWin.classList.add('dragon_win');
-    modalWindow.appendChild(dragonWin);
+    modalWindowWin.appendChild(dragonWin);
 
     let cross = document.createElement('div');
     cross.classList.add('cross');
-    modalWindow.appendChild(cross);
+    modalWindowWin.appendChild(cross);
 
     let shadow = document.createElement('div');
     shadow.classList.add('shadow');
@@ -513,7 +530,7 @@ const createPopupWin = () => {
     }
 
     shadow.onclick = (e) => {
-        if(e.target !== shadow) {
+        if (e.target !== shadow) {
             return
         } else {
             modalWindowWin.remove();
@@ -522,9 +539,8 @@ const createPopupWin = () => {
         }
     }
 
-    return modalWindowWin;    
+    return modalWindowWin;
 }
-
 
 // popup results
 
@@ -557,7 +573,7 @@ const createPopupResults = () => {
     }
 
     shadow.onclick = (e) => {
-        if(e.target !== shadow) {
+        if (e.target !== shadow) {
             return
         } else {
             modalWindow.remove();
@@ -566,7 +582,7 @@ const createPopupResults = () => {
         }
     }
 
-    return modalWindow;    
+    return modalWindow;
 }
 
 buttonTopResults.addEventListener('click', function (s) {
@@ -589,7 +605,7 @@ buttonNew.addEventListener('click', function (n) {
     // count moves 
     steps = 0;
     inputMoves.innerHTML = '0';
-    
+
     // count time
     clearInterval(Interval);
     Interval = null;
@@ -600,29 +616,29 @@ buttonNew.addEventListener('click', function (n) {
 function paintTime(countedTime) {
     return countedTime.toString().padStart(2, 0);
 }
-function playTime(min, sec) {           
+function playTime(min, sec) {
     Interval = setInterval(startTime, 1000);
     secondsTime.innerHTML = paintTime(sec);
     minutesTime.innerHTML = paintTime(min);
     function startTime() {
-        sec++; 
-        seconds++;             
-        if(sec <= 9) {
+        sec++;
+        seconds++;
+        if (sec <= 9) {
             secondsTime.innerHTML = paintTime(sec);
         }
-        if(min <= 9) {
+        if (min <= 9) {
             minutesTime.innerHTML = paintTime(min);
         }
-        if(sec > 9) {
+        if (sec > 9) {
             secondsTime.innerHTML = sec;
-        }                 
-        if(sec === 60) {
+        }
+        if (sec === 60) {
             sec = 0;
             min++;
             minutes++;
-            secondsTime.innerHTML = '00'; 
-            minutesTime.innerHTML = min;                       
-        }        
+            secondsTime.innerHTML = '00';
+            minutesTime.innerHTML = min;
+        }
     }
 }
 
