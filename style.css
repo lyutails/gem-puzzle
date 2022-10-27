@@ -916,6 +916,16 @@ body.active {
   margin-top: 5px;
 }
 
+.cross {
+  width: 30px;
+  height: 30px;
+  background-image: url("./refs/sakura_flower_icon.png");
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+}
+
 .shadow {
   position: fixed;
   width: 100%;
