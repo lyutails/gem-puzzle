@@ -879,6 +879,41 @@ body.active {
     transform: translate(0vw, 0vh);
   }
 }
+.modal {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  background-color: rgba(255, 108, 142, 0.4);
+  transform: translate(380px, -2070px);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dragon_gif {
+  width: 300px;
+  height: 150px;
+  display: relative;
+  background-image: url("./refs/gifs/dragons/dragon_3.gif");
+  border-radius: 0px 0px 5px 5px;
+}
+
+.modal_text {
+  width: 290px;
+  height: 240px;
+  font-family: "Graffiti";
+  font-size: 16px;
+  color: #1c191a;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-top: 5px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1279.9px) {
   .main_wrapper {
     width: 768px;
