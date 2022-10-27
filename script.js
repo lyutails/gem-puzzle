@@ -470,8 +470,7 @@ gameField.addEventListener('click', (event) => {
         replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
         placeCells(myMatrix, [...gameField.childNodes]);
         if (checkWin(myMatrix, winResult) === true) {
-            //alert('Hooray! You solved the puzzle in $time and $steps ^^');
-            createPopupResults();
+            createPopupWin();
         };
         if (isSound) {
             chimeStep.currentTime = 0;
@@ -483,7 +482,51 @@ gameField.addEventListener('click', (event) => {
     }
 })
 
-// popup
+// popup win
+
+const createPopupWin = () => {
+    let modalWindowWin = document.createElement('div');
+    modalWindowWin.classList.add('modal_win');
+    mainWrapper.appendChild(modalWindowWin);
+
+    let modalTextWin = document.createElement('div');
+    modalTextWin.classList.add('modal_text_win');
+    modalWindow.appendChild(modalText);
+    modalTextWin.innerText = `Hooray! You solved the puzzle ${minutes}:${seconds} and ${steps} ^^`;
+
+    let dragonWin = document.createElement('div');
+    dragonWin.classList.add('dragon_win');
+    modalWindow.appendChild(dragonWin);
+
+    let cross = document.createElement('div');
+    cross.classList.add('cross');
+    modalWindow.appendChild(cross);
+
+    let shadow = document.createElement('div');
+    shadow.classList.add('shadow');
+    mainWrapper.appendChild(shadow);
+
+    cross.onclick = () => {
+        modalWindowWin.remove();
+        shadow.remove();
+        document.body.removeAttribute('style');
+    }
+
+    shadow.onclick = (e) => {
+        if(e.target !== shadow) {
+            return
+        } else {
+            modalWindowWin.remove();
+            shadow.remove();
+            document.body.removeAttribute('style');
+        }
+    }
+
+    return modalWindowWin;    
+}
+
+
+// popup results
 
 const createPopupResults = () => {
     let modalWindow = document.createElement('div');
