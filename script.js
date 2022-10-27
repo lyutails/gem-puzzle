@@ -466,7 +466,7 @@ gameField.addEventListener('click', (event) => {
 
 // popup
 
-const createPopup = (card) => {
+const createPopup = () => {
     let modalWindow = document.createElement('div');
     modalWindow.classList.add('modal');
     mainWrapper.appendChild(modalWindow);
@@ -479,6 +479,10 @@ const createPopup = (card) => {
     let dragonGif = document.createElement('div');
     dragonGif.classList.add('dragon_gif');
     modalWindow.appendChild(dragonGif);
+
+    let shadow = document.createElement('div');
+    shadow.classList.add('shadow');
+    mainWrapper.appendChild(shadow);
 
     return modalWindow;
 }
