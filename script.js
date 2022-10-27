@@ -484,7 +484,17 @@ const createPopup = () => {
     shadow.classList.add('shadow');
     mainWrapper.appendChild(shadow);
 
-    return modalWindow;
+    shadow.onclick = (e) => {
+        if(e.target !== shadow) {
+            return
+        } else {
+            modalWindow.remove();
+            shadow.remove();
+            document.body.removeAttribute('style');
+        }
+    }
+
+    return modalWindow;    
 }
 
 buttonTopResults.addEventListener('click', function (s) {
