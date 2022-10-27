@@ -191,7 +191,7 @@ buttonPause.addEventListener('click', function (y) {
         gameField.style.pointerEvents = 'all';
         pauseText.textContent = 'Pause';
         playTime(minutes, seconds);        
-    }    
+    } 
 })
 
 let buttonTopResults = document.createElement('div');
@@ -462,6 +462,29 @@ gameField.addEventListener('click', (event) => {
         steps++;
         inputMoves.innerHTML = steps;
     }
+})
+
+// popup
+
+const createPopup = (card) => {
+    let modalWindow = document.createElement('div');
+    modalWindow.classList.add('modal');
+    mainWrapper.appendChild(modalWindow);
+
+    let modalText = document.createElement('div');
+    modalText.classList.add('modal_text');
+    modalWindow.appendChild(modalText);
+    modalText.innerText = 'Hooray! You solved the puzzle in `${time}` and `${steps}`';
+
+    let dragonGif = document.createElement('div');
+    dragonGif.classList.add('dragon_gif');
+    modalWindow.appendChild(dragonGif);
+
+    return modalWindow;
+}
+
+buttonTopResults.addEventListener('click', function (s) {
+    createPopup();
 })
 
 // sound on new and shuffle on new
