@@ -56,7 +56,10 @@ menuItemOne.addEventListener('click', function (a) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 let menuItemTwo = document.createElement('li');
@@ -76,7 +79,10 @@ menuItemTwo.addEventListener('click', function (c) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 let menuItemThree = document.createElement('li');
@@ -96,7 +102,10 @@ menuItemThree.addEventListener('click', function (d) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 let menuItemFour = document.createElement('li');
@@ -116,7 +125,10 @@ menuItemFour.addEventListener('click', function (f) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 let menuItemFive = document.createElement('li');
@@ -136,7 +148,10 @@ menuItemFive.addEventListener('click', function (g) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 let menuItemSix = document.createElement('li');
@@ -156,7 +171,10 @@ menuItemSix.addEventListener('click', function (h) {
     steps = 0;
     inputMoves.innerHTML = '0';
     clearInterval(Interval);
+    Interval = null;
     playTime(0, 0);
+    minutes = 0;
+    seconds = 0;
 })
 
 dropDownMenu.addEventListener('click', function (e) {
@@ -186,6 +204,7 @@ buttonPause.addEventListener('click', function (y) {
         gameField.style.pointerEvents = 'none';
         pauseText.textContent = 'Play';
         clearInterval(Interval);
+        Interval = null;
     }
     else if (!isPause) {
         gameField.style.pointerEvents = 'all';
@@ -451,13 +470,13 @@ gameField.addEventListener('click', (event) => {
         replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
         placeCells(myMatrix, [...gameField.childNodes]);
         if (checkWin(myMatrix, winResult) === true) {
-            alert('Hooray! You solved the puzzle in $time and $steps ^^');
+            //alert('Hooray! You solved the puzzle in $time and $steps ^^');
+            createPopupResults();
         };
         if (isSound) {
             chimeStep.currentTime = 0;
             chimeStep.play();
         };
-
         // count moves          
         steps++;
         inputMoves.innerHTML = steps;
@@ -466,7 +485,7 @@ gameField.addEventListener('click', (event) => {
 
 // popup
 
-const createPopup = () => {
+const createPopupResults = () => {
     let modalWindow = document.createElement('div');
     modalWindow.classList.add('modal');
     mainWrapper.appendChild(modalWindow);
@@ -474,7 +493,7 @@ const createPopup = () => {
     let modalText = document.createElement('div');
     modalText.classList.add('modal_text');
     modalWindow.appendChild(modalText);
-    modalText.innerText = 'Hooray! You solved the puzzle in `${time}` and `${steps}`';
+    modalText.innerText = `${minutes}:${seconds} and ${steps}`;
 
     let dragonGif = document.createElement('div');
     dragonGif.classList.add('dragon_gif');
@@ -508,8 +527,13 @@ const createPopup = () => {
 }
 
 buttonTopResults.addEventListener('click', function (s) {
-    createPopup();
+    createPopupResults();
 })
+
+// save data to local storage
+
+//localStorage.setItem(key, value);
+
 
 // sound on new and shuffle on new
 
@@ -524,6 +548,8 @@ buttonNew.addEventListener('click', function (n) {
     inputMoves.innerHTML = '0';
     
     // count time
+    clearInterval(Interval);
+    Interval = null;
     minutes = 0;
     seconds = 0;
     playTime(0, 0);
