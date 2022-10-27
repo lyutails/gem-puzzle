@@ -519,7 +519,7 @@ const createPopupWin = () => {
     let modalTextWin = document.createElement('div');
     modalTextWin.classList.add('modal_text_win');
     modalWindowWin.appendChild(modalTextWin);
-    modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} and ${steps} ^^`;
+    modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} time and ${steps} ^^`;
    
     let dragonWinDown = document.createElement('div');
     dragonWinDown.classList.add('dragon_win_down');
