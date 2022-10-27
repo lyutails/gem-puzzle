@@ -480,9 +480,19 @@ const createPopup = () => {
     dragonGif.classList.add('dragon_gif');
     modalWindow.appendChild(dragonGif);
 
+    let cross = document.createElement('div');
+    cross.classList.add('cross');
+    modalWindow.appendChild(cross);
+
     let shadow = document.createElement('div');
     shadow.classList.add('shadow');
     mainWrapper.appendChild(shadow);
+
+    cross.onclick = () => {
+        modalWindow.remove();
+        shadow.remove();
+        document.body.removeAttribute('style');
+    }
 
     shadow.onclick = (e) => {
         if(e.target !== shadow) {
