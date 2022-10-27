@@ -601,9 +601,10 @@ buttonTopResults.addEventListener('click', function (s) {
 
 // save data to local storage
 
-//localStorage.setItem(best_result, value);
- 
-
+// localStorage.setItem(best_result, value);
+// let resultsToModal = localStorage.getItem(best_result);
+// localStorage.removeItem(best_result);
+// localStorage.clear();
 
 // sound on new and shuffle on new
 

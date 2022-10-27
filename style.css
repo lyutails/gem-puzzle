@@ -1776,6 +1776,119 @@ body.active {
       transform: translate(0vw, 0vh);
     }
   }
+  .modal {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    background-color: rgba(255, 108, 142, 0.8);
+    transform: translate(210px, -1920px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    cursor: pointer;
+  }
+  .dragon_gif {
+    width: 300px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_3.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .modal_text {
+    width: 290px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+  }
+  .cross {
+    width: 30px;
+    height: 30px;
+    background-image: url("./refs/sakura_flower_icon.png");
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    cursor: pointer;
+  }
+  .shadow {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 180;
+  }
+  .modal_win {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    background-color: rgba(255, 108, 142, 0.8);
+    transform: translate(210px, -1920px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    cursor: pointer;
+  }
+  .dragon_win_up {
+    width: 300px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_8.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .dragon_win_down {
+    width: 300px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_1.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .modal_text {
+    width: 290px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+  }
+  .modal_text_win {
+    width: 290px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 @media screen and (min-width: 320px) and (max-width: 767.9px) {
   .main_wrapper {
@@ -2560,5 +2673,118 @@ body.active {
     to {
       transform: translate(0vw, 0vh);
     }
+  }
+  .modal {
+    width: 280px;
+    height: 400px;
+    position: absolute;
+    background-color: rgba(255, 108, 142, 0.8);
+    transform: translate(10px, -1300px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    cursor: pointer;
+  }
+  .dragon_gif {
+    width: 280px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_3.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .modal_text {
+    width: 270px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+  }
+  .cross {
+    width: 30px;
+    height: 30px;
+    background-image: url("./refs/sakura_flower_icon.png");
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    cursor: pointer;
+  }
+  .shadow {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 180;
+  }
+  .modal_win {
+    width: 280px;
+    height: 400px;
+    position: absolute;
+    background-color: rgba(255, 108, 142, 0.8);
+    transform: translate(210px, -1920px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    cursor: pointer;
+  }
+  .dragon_win_up {
+    width: 280px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_8.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .dragon_win_down {
+    width: 280px;
+    height: 150px;
+    display: relative;
+    background-image: url("./refs/gifs/dragons/dragon_1.gif");
+    border-radius: 0px 0px 5px 5px;
+  }
+  .modal_text {
+    width: 270px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+  }
+  .modal_text_win {
+    width: 280px;
+    height: 240px;
+    font-family: "Graffiti";
+    font-size: 16px;
+    color: #1c191a;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
