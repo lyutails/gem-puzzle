@@ -470,12 +470,11 @@ gameField.addEventListener('click', (event) => {
         replaceCells(emptyCellCoordinates, cellCoordinates, myMatrix);
         placeCells(myMatrix, [...gameField.childNodes]);
         if (checkWin(myMatrix, winResult) === true) {
-            createPopupWin();
-            // playTime(0, 0);
-            // clearInterval(Interval);
-            // Interval = null;
-            // minutes = 0;
-            // seconds = 0;
+            createPopupWin();            
+            clearInterval(Interval);
+            Interval = null;
+            minutes = 0;
+            seconds = 0;
         };
         if (isSound) {
             chimeStep.currentTime = 0;
@@ -519,7 +518,7 @@ const createPopupWin = () => {
     let modalTextWin = document.createElement('div');
     modalTextWin.classList.add('modal_text_win');
     modalWindowWin.appendChild(modalTextWin);
-    modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} time and ${steps} ^^`;
+    modalTextWin.innerText = `Hooray! You solved the puzzle in ${minutes}:${seconds} and ${steps} moves ^^`;
    
     let dragonWinDown = document.createElement('div');
     dragonWinDown.classList.add('dragon_win_down');
