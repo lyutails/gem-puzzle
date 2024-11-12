@@ -483,7 +483,7 @@ gameField.addEventListener('click', (event) => {
         // count moves          
         steps++;
         inputMoves.innerHTML = steps;
-    } 
+    }
 
     // gameCell.addEventListener('click', function() {
     //     clearInterval(Interval);

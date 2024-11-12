@@ -74,37 +74,15 @@
   background-image: url("./refs/sakura_branch_resize.png");
   z-index: 20;
   position: relative;
-  -webkit-animation-name: sakura_anim;
-          animation-name: sakura_anim;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-name: sakura_anim;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   transform-origin: top right;
 }
 
 .sakura_branch.active {
   background-image: url("./refs/sakura_branch_resize_dark.png");
-}
-
-@-webkit-keyframes sakura_anim {
-  0% {
-    transform: rotateZ(-4deg);
-  }
-  25% {
-    transform: rotateZ(4deg);
-  }
-  50% {
-    transform: rotateZ(-4deg);
-  }
-  75% {
-    transform: rotateZ(4deg);
-  }
-  100% {
-    transform: rotateZ(-4deg);
-  }
 }
 
 @keyframes sakura_anim {
@@ -146,7 +124,9 @@
   transform: translate(480px, -1420px);
 }
 
-.new_button, .pause_button, .results_button {
+.new_button,
+.pause_button,
+.results_button {
   width: 90px;
   height: 40px;
   background-color: transparent;
@@ -162,7 +142,6 @@
   align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   transition: all 0.2s ease-in-out;
   background-image: none;
@@ -190,7 +169,6 @@
   align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   transition: all 0.2s ease-in-out;
   background-image: none;
@@ -269,7 +247,6 @@
   flex-wrap: nowrap;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   transition: all 0.2s ease-in-out;
   background-image: none;
@@ -291,7 +268,6 @@
   position: absolute;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -305,7 +281,6 @@
   position: absolute;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -333,7 +308,7 @@
 }
 .game_field .game_cell:hover {
   cursor: pointer;
-  box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+  box-shadow: 0 0 20px #ff0000, 0 0 20px #0000ff;
   background-color: rgba(216, 26, 70, 0.4);
   border: transparent;
 }
@@ -352,7 +327,6 @@
   text-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5, 0 0 10px #14ffc5;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   opacity: rgb(216, 26, 70);
   transition: all 0.4 ease-in-out;
@@ -375,7 +349,6 @@
   position: absolute;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -390,7 +363,6 @@
   justify-content: flex-end;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -423,7 +395,6 @@
   transform: translate(100px, -1140px);
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -432,7 +403,6 @@
   height: 40px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   text-decoration: none;
 }
@@ -470,7 +440,6 @@
   transition: all 0.4s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -491,7 +460,6 @@
   transition: all 0.4s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -523,7 +491,6 @@ body.active {
   transition: all 0.4s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -544,7 +511,6 @@ body.active {
   transition: all 0.4s ease-in-out;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -563,7 +529,6 @@ body.active {
   height: 40px;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -604,16 +569,11 @@ body.active {
   display: inline-block;
   background-image: url("./refs/moving_dark_1.png");
   box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-  -webkit-animation-name: lights_light_anim_1;
-          animation-name: lights_light_anim_1;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  animation-name: lights_light_anim_1;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 4s;
   z-index: 50;
 }
 
@@ -628,16 +588,11 @@ body.active {
   display: inline-block;
   background-image: url("./refs/moving_dark_2.png");
   box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-  -webkit-animation-name: lights_light_anim_2;
-          animation-name: lights_light_anim_2;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
+  animation-name: lights_light_anim_2;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
   z-index: 50;
 }
 
@@ -652,16 +607,11 @@ body.active {
   display: inline-block;
   background-image: url("./refs/moving_dark_3_big.png");
   box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-  -webkit-animation-name: lights_light_anim_3;
-          animation-name: lights_light_anim_3;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  animation-name: lights_light_anim_3;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
   z-index: 50;
 }
 
@@ -676,46 +626,17 @@ body.active {
   display: inline-block;
   background-image: url("./refs/moving_dark_4.png");
   box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-  -webkit-animation-name: lights_light_anim_4;
-          animation-name: lights_light_anim_4;
-  -webkit-animation-duration: 15s;
-          animation-duration: 15s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-name: lights_light_anim_4;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
   z-index: 50;
 }
 
 .moving_light_4.active {
   background-image: url("./refs/moving_light_4.png");
   box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
-}
-
-@-webkit-keyframes lights_light_anim_1 {
-  from {
-    transform: translate(0vw, 0vh);
-  }
-  25% {
-    transform: translate(2vw, 2vh);
-  }
-  50% {
-    transform: translate(-3vw, -4vh);
-  }
-  75% {
-    transform: translate(5vw, -4vh);
-  }
-  80% {
-    transform: translate(8vw, 3vh);
-  }
-  90% {
-    transform: translate(-7vw, 7vh);
-  }
-  to {
-    transform: translate(0vw, 0vh);
-  }
 }
 
 @keyframes lights_light_anim_1 {
@@ -736,29 +657,6 @@ body.active {
   }
   90% {
     transform: translate(-7vw, 7vh);
-  }
-  to {
-    transform: translate(0vw, 0vh);
-  }
-}
-@-webkit-keyframes lights_light_anim_2 {
-  from {
-    transform: translate(0vw, 0vh);
-  }
-  25% {
-    transform: translate(1vw, 2vh);
-  }
-  50% {
-    transform: translate(-4vw, -2vh);
-  }
-  75% {
-    transform: translate(3vw, 1vh);
-  }
-  80% {
-    transform: translate(6vw, 4vh);
-  }
-  90% {
-    transform: translate(-5vw, 6vh);
   }
   to {
     transform: translate(0vw, 0vh);
@@ -787,29 +685,6 @@ body.active {
     transform: translate(0vw, 0vh);
   }
 }
-@-webkit-keyframes lights_light_anim_3 {
-  from {
-    transform: translate(0vw, 0vh);
-  }
-  25% {
-    transform: translate(3vw, 2vh);
-  }
-  50% {
-    transform: translate(-3vw, -3vh);
-  }
-  75% {
-    transform: translate(2vw, 3vh);
-  }
-  80% {
-    transform: translate(4vw, 6vh);
-  }
-  90% {
-    transform: translate(-3vw, 4vh);
-  }
-  to {
-    transform: translate(0vw, 0vh);
-  }
-}
 @keyframes lights_light_anim_3 {
   from {
     transform: translate(0vw, 0vh);
@@ -828,29 +703,6 @@ body.active {
   }
   90% {
     transform: translate(-3vw, 4vh);
-  }
-  to {
-    transform: translate(0vw, 0vh);
-  }
-}
-@-webkit-keyframes lights_light_anim_4 {
-  from {
-    transform: translate(0vw, 0vh);
-  }
-  25% {
-    transform: translate(1.5vw, -2vh);
-  }
-  50% {
-    transform: translate(-4vw, 2vh);
-  }
-  75% {
-    transform: translate(-3vw, -1vh);
-  }
-  80% {
-    transform: translate(6vw, 4vh);
-  }
-  90% {
-    transform: translate(-5vw, 6vh);
   }
   to {
     transform: translate(0vw, 0vh);
@@ -911,7 +763,6 @@ body.active {
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   margin-top: 5px;
 }
@@ -979,7 +830,6 @@ body.active {
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   margin-top: 5px;
 }
@@ -993,7 +843,6 @@ body.active {
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   margin-top: 5px;
   display: flex;
@@ -1051,35 +900,14 @@ body.active {
     background-image: url("./refs/sakura_branch_resize.png");
     z-index: 20;
     position: relative;
-    -webkit-animation-name: sakura_anim;
-            animation-name: sakura_anim;
-    -webkit-animation-duration: 20s;
-            animation-duration: 20s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation-name: sakura_anim;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     transform-origin: top right;
   }
   .sakura_branch.active {
     background-image: url("./refs/sakura_branch_resize_dark.png");
-  }
-  @-webkit-keyframes sakura_anim {
-    0% {
-      transform: rotateZ(-4deg);
-    }
-    25% {
-      transform: rotateZ(4deg);
-    }
-    50% {
-      transform: rotateZ(-4deg);
-    }
-    75% {
-      transform: rotateZ(4deg);
-    }
-    100% {
-      transform: rotateZ(-4deg);
-    }
   }
   @keyframes sakura_anim {
     0% {
@@ -1118,7 +946,9 @@ body.active {
     top: 0;
     transform: translate(140px, -1420px);
   }
-  .new_button, .pause_button, .results_button {
+  .new_button,
+  .pause_button,
+  .results_button {
     width: 90px;
     height: 40px;
     background-color: transparent;
@@ -1134,7 +964,6 @@ body.active {
     align-items: center;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -1160,7 +989,6 @@ body.active {
     align-items: center;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -1228,7 +1056,6 @@ body.active {
     flex-wrap: nowrap;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -1248,7 +1075,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .time {
@@ -1261,7 +1087,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .game_field {
@@ -1288,7 +1113,7 @@ body.active {
   }
   .game_field .game_cell:hover {
     cursor: pointer;
-    box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+    box-shadow: 0 0 20px #ff0000, 0 0 20px #0000ff;
     background-color: rgba(216, 26, 70, 0.4);
     border: transparent;
   }
@@ -1307,7 +1132,6 @@ body.active {
     text-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5, 0 0 10px #14ffc5;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     opacity: rgb(216, 26, 70);
     transition: all 0.4 ease-in-out;
@@ -1329,7 +1153,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .input_time {
@@ -1343,7 +1166,6 @@ body.active {
     justify-content: flex-end;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .bottom_buttons_container {
@@ -1355,7 +1177,6 @@ body.active {
     transform: translate(130px, -1140px);
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .rsschool_button {
@@ -1363,7 +1184,6 @@ body.active {
     height: 40px;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     text-decoration: none;
   }
@@ -1396,7 +1216,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_light:hover {
@@ -1414,7 +1233,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_dark:hover {
@@ -1441,7 +1259,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_sound:hover {
@@ -1459,7 +1276,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_sound:hover.active {
@@ -1475,7 +1291,6 @@ body.active {
     height: 40px;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .lyutails_content {
@@ -1510,16 +1325,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_1.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_1;
-            animation-name: lights_light_anim_1;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 4s;
-            animation-delay: 4s;
+    animation-name: lights_light_anim_1;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
     z-index: 50;
   }
   .moving_light_1.active {
@@ -1532,16 +1342,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_2.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_2;
-            animation-name: lights_light_anim_2;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 2s;
-            animation-delay: 2s;
+    animation-name: lights_light_anim_2;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
     z-index: 50;
   }
   .moving_light_2.active {
@@ -1554,16 +1359,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_3.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_3;
-            animation-name: lights_light_anim_3;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
+    animation-name: lights_light_anim_3;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
     z-index: 50;
   }
   .moving_light_3.active {
@@ -1576,44 +1376,16 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_4.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_4;
-            animation-name: lights_light_anim_4;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 3s;
-            animation-delay: 3s;
+    animation-name: lights_light_anim_4;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
     z-index: 50;
   }
   .moving_light_4.active {
     background-image: url("./refs/moving_light_4.png");
     box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
-  }
-  @-webkit-keyframes lights_light_anim_1 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(2vw, 2vh);
-    }
-    50% {
-      transform: translate(-3vw, -4vh);
-    }
-    75% {
-      transform: translate(5vw, -4vh);
-    }
-    80% {
-      transform: translate(8vw, 3vh);
-    }
-    90% {
-      transform: translate(-7vw, 7vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
   }
   @keyframes lights_light_anim_1 {
     from {
@@ -1633,29 +1405,6 @@ body.active {
     }
     90% {
       transform: translate(-7vw, 7vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
-  @-webkit-keyframes lights_light_anim_2 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(1vw, 2vh);
-    }
-    50% {
-      transform: translate(-4vw, -2vh);
-    }
-    75% {
-      transform: translate(3vw, 1vh);
-    }
-    80% {
-      transform: translate(6vw, 4vh);
-    }
-    90% {
-      transform: translate(-5vw, 6vh);
     }
     to {
       transform: translate(0vw, 0vh);
@@ -1684,29 +1433,6 @@ body.active {
       transform: translate(0vw, 0vh);
     }
   }
-  @-webkit-keyframes lights_light_anim_3 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(3vw, 2vh);
-    }
-    50% {
-      transform: translate(-3vw, -3vh);
-    }
-    75% {
-      transform: translate(2vw, 3vh);
-    }
-    80% {
-      transform: translate(4vw, 6vh);
-    }
-    90% {
-      transform: translate(-3vw, 4vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
   @keyframes lights_light_anim_3 {
     from {
       transform: translate(0vw, 0vh);
@@ -1725,29 +1451,6 @@ body.active {
     }
     90% {
       transform: translate(-3vw, 4vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
-  @-webkit-keyframes lights_light_anim_4 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(1.5vw, -2vh);
-    }
-    50% {
-      transform: translate(-4vw, 2vh);
-    }
-    75% {
-      transform: translate(-3vw, -1vh);
-    }
-    80% {
-      transform: translate(6vw, 4vh);
-    }
-    90% {
-      transform: translate(-5vw, 6vh);
     }
     to {
       transform: translate(0vw, 0vh);
@@ -1806,7 +1509,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
   }
@@ -1868,7 +1570,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
   }
@@ -1881,7 +1582,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
     display: flex;
@@ -1939,35 +1639,14 @@ body.active {
     background-image: url("./refs/sakura_branch_resize_320.png");
     z-index: 20;
     position: relative;
-    -webkit-animation-name: sakura_anim;
-            animation-name: sakura_anim;
-    -webkit-animation-duration: 20s;
-            animation-duration: 20s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
+    animation-name: sakura_anim;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     transform-origin: top right;
   }
   .sakura_branch.active {
     background-image: url("./refs/sakura_branch_resize_dark_320.png");
-  }
-  @-webkit-keyframes sakura_anim {
-    0% {
-      transform: rotateZ(-4deg);
-    }
-    25% {
-      transform: rotateZ(4deg);
-    }
-    50% {
-      transform: rotateZ(-4deg);
-    }
-    75% {
-      transform: rotateZ(4deg);
-    }
-    100% {
-      transform: rotateZ(-4deg);
-    }
   }
   @keyframes sakura_anim {
     0% {
@@ -2006,7 +1685,9 @@ body.active {
     top: 0;
     transform: translate(10px, -820px);
   }
-  .new_button, .pause_button, .results_button {
+  .new_button,
+  .pause_button,
+  .results_button {
     width: 50px;
     height: 30px;
     background-color: transparent;
@@ -2022,7 +1703,6 @@ body.active {
     align-items: center;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -2048,7 +1728,6 @@ body.active {
     align-items: center;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -2116,7 +1795,6 @@ body.active {
     flex-wrap: nowrap;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     transition: all 0.2s ease-in-out;
     background-image: none;
@@ -2137,7 +1815,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     z-index: 120;
   }
@@ -2151,7 +1828,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     z-index: 120;
   }
@@ -2179,7 +1855,7 @@ body.active {
   }
   .game_field .game_cell:hover {
     cursor: pointer;
-    box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+    box-shadow: 0 0 20px #ff0000, 0 0 20px #0000ff;
     background-color: rgba(216, 26, 70, 0.4);
     border: transparent;
   }
@@ -2198,7 +1874,6 @@ body.active {
     text-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5, 0 0 10px #14ffc5;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     opacity: rgb(216, 26, 70);
     transition: all 0.4 ease-in-out;
@@ -2220,7 +1895,6 @@ body.active {
     position: absolute;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .input_time {
@@ -2234,7 +1908,6 @@ body.active {
     justify-content: flex-end;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .seconds {
@@ -2252,7 +1925,6 @@ body.active {
     transform: translate(5px, -740px);
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .rsschool_button {
@@ -2260,7 +1932,6 @@ body.active {
     height: 30px;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     text-decoration: none;
   }
@@ -2293,7 +1964,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_light:hover {
@@ -2311,7 +1981,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_dark:hover {
@@ -2338,7 +2007,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_sound:hover {
@@ -2356,7 +2024,6 @@ body.active {
     transition: all 0.4s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .button_sound:hover.active {
@@ -2372,7 +2039,6 @@ body.active {
     height: 30px;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .lyutails_content {
@@ -2408,16 +2074,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_1.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_1;
-            animation-name: lights_light_anim_1;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 4s;
-            animation-delay: 4s;
+    animation-name: lights_light_anim_1;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
     z-index: 50;
   }
   .moving_light_1.active {
@@ -2430,16 +2091,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_2.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_2;
-            animation-name: lights_light_anim_2;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 2s;
-            animation-delay: 2s;
+    animation-name: lights_light_anim_2;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
     z-index: 50;
   }
   .moving_light_2.active {
@@ -2452,16 +2108,11 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_3.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_3;
-            animation-name: lights_light_anim_3;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
+    animation-name: lights_light_anim_3;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
     z-index: 50;
   }
   .moving_light_3.active {
@@ -2474,44 +2125,16 @@ body.active {
     display: inline-block;
     background-image: url("./refs/moving_dark_4.png");
     box-shadow: 0 0 50px #14ffc5, 0 0 30px #14ffc5;
-    -webkit-animation-name: lights_light_anim_4;
-            animation-name: lights_light_anim_4;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 3s;
-            animation-delay: 3s;
+    animation-name: lights_light_anim_4;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
     z-index: 50;
   }
   .moving_light_4.active {
     background-image: url("./refs/moving_light_4.png");
     box-shadow: 0 0 50px #fff714, 0 0 30px #fff714;
-  }
-  @-webkit-keyframes lights_light_anim_1 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(2vw, 2vh);
-    }
-    50% {
-      transform: translate(-3vw, -4vh);
-    }
-    75% {
-      transform: translate(5vw, -4vh);
-    }
-    80% {
-      transform: translate(8vw, 3vh);
-    }
-    90% {
-      transform: translate(-7vw, 7vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
   }
   @keyframes lights_light_anim_1 {
     from {
@@ -2531,29 +2154,6 @@ body.active {
     }
     90% {
       transform: translate(-7vw, 7vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
-  @-webkit-keyframes lights_light_anim_2 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(1vw, 2vh);
-    }
-    50% {
-      transform: translate(-4vw, -2vh);
-    }
-    75% {
-      transform: translate(3vw, 1vh);
-    }
-    80% {
-      transform: translate(6vw, 4vh);
-    }
-    90% {
-      transform: translate(-5vw, 6vh);
     }
     to {
       transform: translate(0vw, 0vh);
@@ -2582,29 +2182,6 @@ body.active {
       transform: translate(0vw, 0vh);
     }
   }
-  @-webkit-keyframes lights_light_anim_3 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(3vw, 2vh);
-    }
-    50% {
-      transform: translate(-3vw, -3vh);
-    }
-    75% {
-      transform: translate(2vw, 3vh);
-    }
-    80% {
-      transform: translate(4vw, 6vh);
-    }
-    90% {
-      transform: translate(-3vw, 4vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
   @keyframes lights_light_anim_3 {
     from {
       transform: translate(0vw, 0vh);
@@ -2623,29 +2200,6 @@ body.active {
     }
     90% {
       transform: translate(-3vw, 4vh);
-    }
-    to {
-      transform: translate(0vw, 0vh);
-    }
-  }
-  @-webkit-keyframes lights_light_anim_4 {
-    from {
-      transform: translate(0vw, 0vh);
-    }
-    25% {
-      transform: translate(1.5vw, -2vh);
-    }
-    50% {
-      transform: translate(-4vw, 2vh);
-    }
-    75% {
-      transform: translate(-3vw, -1vh);
-    }
-    80% {
-      transform: translate(6vw, 4vh);
-    }
-    90% {
-      transform: translate(-5vw, 6vh);
     }
     to {
       transform: translate(0vw, 0vh);
@@ -2704,7 +2258,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
   }
@@ -2766,7 +2319,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
   }
@@ -2779,7 +2331,6 @@ body.active {
     position: relative;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
     margin-top: 5px;
     display: flex;
